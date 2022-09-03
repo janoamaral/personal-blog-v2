@@ -3,8 +3,8 @@
   import Loader from '../Loader/Loader.svelte';
   import fail from '../../static/dayum.mp4';
 
-  let isLoading = false;
   let gitRepos = [];
+  let isLoading = false;
   let gitFail = false;
 
   onMount(async () => {
@@ -44,7 +44,14 @@
 </script>
 
 <h3 class="font-poppins text-2xl md:text-3xl text-light-blue mb-2">My most starred repos</h3>
-<p class="text-gray text-sm mb-6">This are some of my most popular repos on github.</p>
+<p class="text-gray text-sm mb-6">
+  This are some of my most popular repos on GitHub. If you want to see this site code you can do it
+  <a
+    href="https://github.com/janoamaral/personal-blog-v2"
+    class="text-light-blue underline"
+    target="_BLANK">here</a
+  >
+</p>
 {#if isLoading}
   <div class="flex align-middle w-full min-h-screen">
     <Loader />
