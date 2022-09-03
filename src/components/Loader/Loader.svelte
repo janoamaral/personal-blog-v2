@@ -7,7 +7,7 @@
     position: relative;
     width: 48px;
     height: 48px;
-    background: #de3500;
+    background: #73daca;
     transform: rotateX(65deg) rotate(45deg);
     color: #fff;
     animation: layers1 1s linear infinite alternate;
