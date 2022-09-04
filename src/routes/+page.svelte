@@ -15,9 +15,14 @@
         href="https://kit.svelte.dev">Taggify</a
       >.
     </p>
+    <ul>
+      <li><a href="#repos-section">Repos</a></li>
+      <li><a href="#stats-section">Repos</a></li>
+      <li><a href="#posts-section">Blog posts</a></li>
+    </ul>
   </header>
   <div class="p-4 md:w-1/2" />
-  <main class="p-4 flex flex-col md:w-1/2 min-h-screen">
+  <main class="p-4 flex flex-col md:w-1/2 min-h-screen scroll-smooth">
     <Repos />
     <CodeStats />
     <Posts />

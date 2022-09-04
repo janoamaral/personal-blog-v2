@@ -11,7 +11,7 @@
     isLoading = true;
     //data = await fetch('https://api.github.com/users/janoamaral/repos').then((x) => x.json());
 
-    Promise.allSettled([fetch('http://localhost:1337/posts?_limit=6')])
+    Promise.allSettled([fetch('http://localhost:1337/posts?_limit=6&_sort=PublishDate:DESC')])
       .then(async ([resPosts]) => {
         const resPostsResponse = resPosts.value;
         return [await resPostsResponse.json()];
@@ -29,7 +29,7 @@
   });
 </script>
 
-<div class="mb-16">
+<div class="mb-16" id="posts-section">
   <h3 class="font-poppins text-2xl md:text-3xl text-light-blue mb-2">Latest posts</h3>
   <p class="text-gray text-sm mb-12">
     This are some of my most popular repos on GitHub. If you want to see this site code you can do
@@ -74,7 +74,13 @@
                 {post.Title}
               </p>
               <p class="mb-3 text-dim-white font-sm">{post.Description}</p>
-              <p class="text-xs">⭐ {post.stargazers_count}</p>
+              <p class="text-xs">
+                {new Intl.DateTimeFormat(navigator.languages[0], {
+                  day: '2-digit',
+                  month: '2-digit',
+                  year: 'numeric'
+                }).format(new Date(post.PublishDate))}
+              </p>
             </div>
           </a>
         </div>
