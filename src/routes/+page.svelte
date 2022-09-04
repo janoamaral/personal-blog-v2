@@ -1,5 +1,7 @@
 <script>
   import Repos from '../components/Home/RepoSection.svelte';
+  import CodeStats from '../components/Home/CodeStats.svelte';
+  import Posts from '../components/Home/PostsSection.svelte';
 </script>
 
 <div class="flex flex-col md:flex-row container m-auto pt-8 lg:pt-16">
@@ -17,5 +19,7 @@
   <div class="p-4 md:w-1/2" />
   <main class="p-4 flex flex-col md:w-1/2 min-h-screen">
     <Repos />
+    <CodeStats />
+    <Posts />
   </main>
 </div>

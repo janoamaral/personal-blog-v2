@@ -5,3 +5,13 @@
 .debug {
   border: 1px dashed magenta
 }
+
+.faux-masonry div:nth-child(-n+3) {
+  transform: translateY(-3em);
+}
+
+@media screen and (max-width: 1280px) {
+.faux-masonry div:nth-child(-n+3) {
+  transform: translateY(0);
+}
+}
