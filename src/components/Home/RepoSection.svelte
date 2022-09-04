@@ -43,39 +43,42 @@
   });
 </script>
 
-<h3 class="font-poppins text-2xl md:text-3xl text-light-blue mb-2">My most starred repos</h3>
-<p class="text-gray text-sm mb-6">
-  This are some of my most popular repos on GitHub. If you want to see this site code you can do it
-  <a
-    href="https://github.com/janoamaral/personal-blog-v2"
-    class="text-light-blue underline"
-    target="_BLANK">here</a
-  >
-</p>
-{#if isLoading}
-  <div class="flex align-middle w-full min-h-screen">
-    <Loader />
-  </div>
-{:else if gitFail}
-  <p class="text-gray text-sm mb-6 text-center">⚠️ Something goes wrong loading this...</p>
-  <video autoplay loop muted><source src={fail} type="video/mp4" /></video>
-{:else}
-  {#each gitRepos as repo}
+<div class="mb-24">
+  <h3 class="font-poppins text-2xl md:text-3xl text-light-blue mb-2">My most starred repos</h3>
+  <p class="text-gray text-sm mb-12">
+    This are some of my most popular repos on GitHub. If you want to see this site code you can do
+    it
     <a
-      href={repo.html_url}
-      target="_BLANK"
-      class="flex flex-col mb-4 bg-light-black p-8 rounded-sm
-          transition-all ease-in hover:scale-105"
+      href="https://github.com/janoamaral/personal-blog-v2"
+      class="text-light-blue underline"
+      target="_BLANK">here</a
     >
-      <p
-        class="uppercase text-xs mb-2 font-bold
-          tracking-widest font-mono text-dim-white"
+  </p>
+  {#if isLoading}
+    <div class="flex align-middle w-full min-h-screen">
+      <Loader />
+    </div>
+  {:else if gitFail}
+    <p class="text-gray text-sm mb-6 text-center">⚠️ Something goes wrong loading this...</p>
+    <video autoplay loop muted><source src={fail} type="video/mp4" /></video>
+  {:else}
+    {#each gitRepos as repo}
+      <a
+        href={repo.html_url}
+        target="_BLANK"
+        class="flex flex-col mb-4 bg-light-black p-8 rounded-sm
+          transition-all ease-in hover:scale-105"
       >
-        {repo.language || 'Other'}
-      </p>
-      <p class="font-poppins uppercase text-lg md:text-2xl mb-1">{repo.name}</p>
-      <p class="mb-3 text-dim-white font-sm">{repo.description}</p>
-      <p class="text-xs">⭐ {repo.stargazers_count}</p>
-    </a>
-  {/each}
-{/if}
+        <p
+          class="uppercase text-xs mb-2 font-bold
+          tracking-widest font-mono text-dim-white"
+        >
+          {repo.language || 'Other'}
+        </p>
+        <p class="font-poppins uppercase text-lg md:text-2xl mb-1">{repo.name}</p>
+        <p class="mb-3 text-dim-white font-sm">{repo.description}</p>
+        <p class="text-xs">⭐ {repo.stargazers_count}</p>
+      </a>
+    {/each}
+  {/if}
+</div>
