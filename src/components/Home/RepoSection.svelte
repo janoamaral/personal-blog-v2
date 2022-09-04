@@ -43,7 +43,7 @@
   });
 </script>
 
-<div class="mb-24">
+<div class="mb-24" id='repos-section'>
   <h3 class="font-poppins text-2xl md:text-3xl text-light-blue mb-2">My most starred repos</h3>
   <p class="text-gray text-sm mb-12">
     This are some of my most popular repos on GitHub. If you want to see this site code you can do
@@ -62,23 +62,26 @@
     <p class="text-gray text-sm mb-6 text-center">⚠️ Something goes wrong loading this...</p>
     <video autoplay loop muted><source src={fail} type="video/mp4" /></video>
   {:else}
-    {#each gitRepos as repo}
-      <a
-        href={repo.html_url}
-        target="_BLANK"
-        class="flex flex-col mb-4 bg-light-black p-8 rounded-sm
-          transition-all ease-in hover:scale-105"
-      >
-        <p
-          class="uppercase text-xs mb-2 font-bold
-          tracking-widest font-mono text-dim-white"
+    <div class="group">
+      {#each gitRepos as repo}
+        <a
+          href={repo.html_url}
+          target="_BLANK"
+          class="flex flex-col mb-4 bg-light-black p-8 rounded-sm
+          transition-all ease-in hover:scale-110 group-hover:opacity-60
+          hover-full"
         >
-          {repo.language || 'Other'}
-        </p>
-        <p class="font-poppins uppercase text-lg md:text-2xl mb-1">{repo.name}</p>
-        <p class="mb-3 text-dim-white font-sm">{repo.description}</p>
-        <p class="text-xs">⭐ {repo.stargazers_count}</p>
-      </a>
-    {/each}
+          <p
+            class="uppercase text-xs mb-2 font-bold
+          tracking-widest font-mono text-dim-white"
+          >
+            {repo.language || 'Other'}
+          </p>
+          <p class="font-poppins uppercase text-lg md:text-2xl mb-1">{repo.name}</p>
+          <p class="mb-3 text-dim-white font-sm">{repo.description}</p>
+          <p class="text-xs">⭐ {repo.stargazers_count}</p>
+        </a>
+      {/each}
+    </div>
   {/if}
 </div>

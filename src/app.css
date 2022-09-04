@@ -14,8 +14,21 @@
   scroll-behavior: smooth !important;
 }
 
-@media screen and (max-width: 1280px) {
-.faux-masonry > div:nth-child(-n+3) {
-  transform: translateY(0);
+.hover-full:hover {
+  opacity: 100% !important;
 }
+
+.menu-separator {
+  width: 2em;
+  height: .45em;
+}
+
+.md-menu > li:hover > a > .menu-separator {
+  width: 3em;
+}
+
+@media screen and (max-width: 1280px) {
+  .faux-masonry > div:nth-child(-n+3) {
+    transform: translateY(0);
+  }
 }
