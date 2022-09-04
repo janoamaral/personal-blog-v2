@@ -11,7 +11,7 @@
     isLoading = true;
     //data = await fetch('https://api.github.com/users/janoamaral/repos').then((x) => x.json());
 
-    Promise.allSettled([fetch('http://localhost:1337/posts')])
+    Promise.allSettled([fetch('http://localhost:1337/posts?_limit=6')])
       .then(async ([resPosts]) => {
         const resPostsResponse = resPosts.value;
         return [await resPostsResponse.json()];
@@ -55,30 +55,39 @@
             href={post.category.Name}
             target="_BLANK"
             class="flex flex-col bg-light-black p-8 rounded-sm
-          transition-all ease-in hover:scale-105 w-full xl:h-80
-          align-bottom mb-4 xl:mb-0"
+          transition-all ease-in hover:scale-105 w-full xl:h-96
+          mb-4 xl:mb-0 items-bottom relative"
           >
-            <p
-              class="uppercase text-xs mb-2 font-bold
+            <div class="relative bottom-2">
+              <p
+                class="uppercase text-xs mb-2 font-bold
           tracking-widest font-mono text-dim-white"
-            >
-              {post.category.Name || 'Other'}
-            </p>
-            <p
-              class="font-poppins uppercase text-lg md:text-2xl
-        mb-1"
-            >
-              {post.Title}
-            </p>
-            <p class="mb-3 text-dim-white font-sm">{post.Description}</p>
-            <p class="text-xs">⭐ {post.stargazers_count}</p>
+              >
+                {post.category.Name || 'Other'}
+              </p>
+            </div>
+            <div class="absolute bottom-0 left-0 w-full p-6 pb-8">
+              <p
+                class="font-poppins uppercase text-lg md:text-2xl
+        mb-1 place-items-end"
+              >
+                {post.Title}
+              </p>
+              <p class="mb-3 text-dim-white font-sm">{post.Description}</p>
+              <p class="text-xs">⭐ {post.stargazers_count}</p>
+            </div>
           </a>
         </div>
       {/each}
     </div>
-    <a href="#" class="inline-block w-full text-center p-2 rounded-sm
-    bg-light-blue text-black font-mono font-bold uppercase mt-6 mb-2">Go to the blog</a>
-    <small class="text-light-blue text-center w-full
-    inline-block">Sorry... spanish only</small>
+    <a
+      href="#"
+      class="inline-block w-full text-center p-2 rounded-sm
+    bg-light-blue text-black font-mono font-bold uppercase mt-6 mb-2">Go to the blog</a
+    >
+    <small
+      class="text-light-blue text-center w-full
+    inline-block">Sorry... spanish only</small
+    >
   {/if}
 </div>
