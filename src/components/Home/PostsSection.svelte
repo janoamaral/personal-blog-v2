@@ -18,7 +18,6 @@
       })
       .then((res) => {
         postList = res[0].slice(0, 6);
-        console.log(postList);
         isLoading = false;
       })
       .catch((err) => {
@@ -59,7 +58,7 @@
             target="_BLANK"
             class="flex flex-col bg-light-black p-8 rounded-sm
           transition-all ease-in hover:scale-105 w-full xl:h-96
-          mb-4 xl:mb-0 items-bottom relative group-hover:opacity-60
+          mb-4 xl:mb-0 items-bottom relative group-hover:opacity-50
           hover-full"
           >
             <div>
@@ -77,7 +76,7 @@
                 }).format(new Date(post.PublishDate))}
               </p>
             </div>
-            <div class="absolute bottom-0 left-0 w-full p-6 pb-8">
+            <div class="xl:absolute bottom-0 left-0 w-full p-6 pb-8">
               <p
                 class="font-poppins uppercase text-lg md:text-2xl
         mb-1 place-items-end"

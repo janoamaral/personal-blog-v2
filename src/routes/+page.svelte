@@ -2,6 +2,29 @@
   import Repos from '../components/Home/RepoSection.svelte';
   import CodeStats from '../components/Home/CodeStats.svelte';
   import Posts from '../components/Home/PostsSection.svelte';
+
+  import { onMount } from 'svelte';
+
+  onMount(() => {
+    let options = {
+      root: document.querySelector('#scrollArea'),
+      rootMargin: '0px',
+      threshold: 0.0
+    };
+
+    let clbk = (e, observer) => {
+      console.log('hit');
+      e.forEach((entry) => {
+        console.log('test', entry.boundingClientRect);
+      });
+    };
+
+    let observer = new IntersectionObserver(clbk, options);
+
+    let blogVisible = document.querySelector('#posts-section');
+
+    observer.observe(blogVisible);
+  });
 </script>
 
 <div class="flex flex-col md:flex-row container m-auto pt-8 lg:pt-16">
@@ -19,31 +42,37 @@
       <li class="mb-6 text-dim-white hover:text-white transition-all">
         <a href="#repos-section">
           <span>01 </span>
-          <div class="inline-block border-t menu-separator transition-all
-          mx-1" />
+          <div
+            class="inline-block border-t menu-separator transition-all
+          mx-1"
+          />
           Repos
         </a>
       </li>
       <li class="mb-6 text-dim-white hover:text-white">
         <a href="#stats-section">
           <span>02 </span>
-          <div class="inline-block border-t menu-separator transition-all
-          mx-1" />
+          <div
+            class="inline-block border-t menu-separator transition-all
+          mx-1"
+          />
           stats
         </a>
       </li>
       <li class="mb-6 text-dim-white hover:text-white">
         <a href="#posts-section">
           <span>03 </span>
-          <div class="inline-block border-t menu-separator transition-all
-          mx-1" />
+          <div
+            class="inline-block border-t menu-separator transition-all
+          mx-1"
+          />
           Blog
         </a>
       </li>
     </ul>
   </header>
   <div class="p-4 md:w-1/2" />
-  <main class="p-4 flex flex-col md:w-1/2 min-h-screen scroll-smooth">
+  <main id="scrollArea" class="p-4 flex flex-col md:w-1/2 min-h-screen scroll-smooth">
     <Repos />
     <CodeStats />
     <Posts />

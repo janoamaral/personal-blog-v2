@@ -68,7 +68,7 @@
           href={repo.html_url}
           target="_BLANK"
           class="flex flex-col mb-4 bg-light-black p-8 rounded-sm
-          transition-all ease-in hover:scale-110 group-hover:opacity-60
+          transition-all ease-in hover:scale-110 group-hover:opacity-50
           hover-full"
         >
           <p
