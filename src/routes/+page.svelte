@@ -5,25 +5,26 @@
 
   import { onMount } from 'svelte';
 
-  onMount(() => {
+  const createObserver = (elemento) => {
+    let observer;
     let options = {
-      root: document.querySelector('#scrollArea'),
+      root: null,
       rootMargin: '0px',
-      threshold: 0.0
+      threshold: 0
     };
 
-    let clbk = (e, observer) => {
-      console.log('hit');
-      e.forEach((entry) => {
-        console.log('test', entry.boundingClientRect);
-      });
-    };
+    observer = new IntersectionObserver(callback, options);
+    observer.observe(elemento);
+  };
 
-    let observer = new IntersectionObserver(clbk, options);
+  const callback = () => {
+    console.log('HIT');
+  };
 
-    let blogVisible = document.querySelector('#posts-section');
+  onMount(() => {
+    let boxElement = document.querySelector('#posts-section');
 
-    observer.observe(blogVisible);
+    createObserver(boxElement);
   });
 </script>
 
@@ -74,6 +75,10 @@
   <div class="p-4 md:w-1/2" />
   <main id="scrollArea" class="p-4 flex flex-col md:w-1/2 min-h-screen scroll-smooth">
     <Repos />
+    <CodeStats />
+    <CodeStats />
+    <CodeStats />
+    <CodeStats />
     <CodeStats />
     <Posts />
   </main>
