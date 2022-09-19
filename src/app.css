@@ -27,6 +27,13 @@
   width: 3em;
 }
 
+.menu-active {
+  color: white !important;
+}
+.menu-active > a > .menu-separator {
+  width: 3em !important;
+}
+
 @media screen and (max-width: 1280px) {
   .faux-masonry > div:nth-child(-n+3) {
     transform: translateY(0);

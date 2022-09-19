@@ -22,17 +22,19 @@
       })
       .then((res) => {
         const data = res[0];
-        gitRepos = data.sort((a, b) => {
-          return b.stargazers_count - a.stargazers_count;
-        });
-        let formatedLogico = res[1].sort((a, b) => {
-          return b.stargazers_count - a.stargazers_count;
-        });
-        gitRepos = gitRepos.slice(0, 3);
-        gitRepos.push(...formatedLogico.slice(0, 3));
-        gitRepos = gitRepos.sort((a, b) => {
-          return b.stargazers_count - a.stargazers_count;
-        });
+        if (data) {
+          gitRepos = data.sort((a, b) => {
+            return b.stargazers_count - a.stargazers_count;
+          });
+          let formatedLogico = res[1].sort((a, b) => {
+            return b.stargazers_count - a.stargazers_count;
+          });
+          gitRepos = gitRepos.slice(0, 3);
+          gitRepos.push(...formatedLogico.slice(0, 3));
+          gitRepos = gitRepos.sort((a, b) => {
+            return b.stargazers_count - a.stargazers_count;
+          });
+        }
         isLoading = false;
       })
       .catch((err) => {
@@ -43,7 +45,7 @@
   });
 </script>
 
-<div class="mb-32" id='repos-section'>
+<div class="mb-32" id="repos-section">
   <h3 class="font-poppins text-2xl md:text-3xl text-light-blue mb-2">My most starred repos</h3>
   <p class="text-gray text-sm mb-12">
     This are some of my most popular repos on GitHub. If you want to see this site code you can do
