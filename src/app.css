@@ -34,6 +34,18 @@
   width: 3em !important;
 }
 
+body {
+  overflow-x: hidden;
+}
+
+.gradient-y-transparent-night {
+    background: linear-gradient(180deg,hsla(0,0%,8%,0),#1a1b26);
+}
+
+.gradient-y-night-transparent {
+    background: linear-gradient(0deg,hsla(0,0%,8%,0),#1a1b26);
+}
+
 @media screen and (max-width: 1280px) {
   .faux-masonry > div:nth-child(-n+3) {
     transform: translateY(0);
