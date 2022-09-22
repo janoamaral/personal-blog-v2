@@ -36,9 +36,10 @@
   {/if}
   <h4 class="font-bold text-2xl mb-2 md:text-2xl">Tech stack</h4>
   <p class="text-gray text-sm mb-6">
-    Technologies that I have working knowledge and used to build applications.
+    Technologies that I have a working knowledge and used to build applications.
   </p>
   <iframe
+    loading="lazy"
     title="tech stack"
     src="stack.html"
     class="pt-4"
