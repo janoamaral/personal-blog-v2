@@ -11,7 +11,7 @@
     let options = {
       root: null,
       rootMargin: '0px',
-      threshold: .3 
+      threshold: 0.3
     };
 
     observer = new IntersectionObserver(callback, options);
@@ -77,10 +77,11 @@
   });
 </script>
 
-<div class="flex flex-col md:flex-row container m-auto pt-8 lg:pt-16">
+<div class="flex flex-col md:flex-row container m-auto pt-16 lg:pt-16">
   <header class="p-4 md:w-1/3 md:fixed">
-    <h1 class="font-poppins text-5xl md:text-6xl text-green">Jano Amaral</h1>
-    <h2 class="font-poppins text-2xl md:text-3xl">Freelance system analyst</h2>
+    <h1 class="font-bold text-5xl md:text-6xl">Jano Amaral</h1>
+    <h2 class="font-mono font-bold text-2xl md:text-xl text-blue-300
+    cursor">~# Freelance system analyst</h2>
     <p class="text-gray mt-10">
       👋Hi! I'm Alejandro Amaral. An all rounder. From backend to frontend, sysadmin to customer
       service. In love with web performance. Never stop learning. Currently @<a
@@ -88,7 +89,8 @@
         href="https://kit.svelte.dev">Taggify</a
       >.
     </p>
-    <ul class="font-mono font-bold tracking-wide text-xs uppercase mt-16 md-menu">
+    <ul class="font-mono font-bold tracking-wide text-xs uppercase mt-16
+    md-menu hidden lg:block">
       <li
         class="mb-6 text-dim-white hover:text-white transition-all
       {isAboutMeVisible ? 'menu-active' : ''}"
@@ -144,8 +146,11 @@
     </ul>
   </header>
   <div class="p-4 md:w-1/2" />
-  <main id="scrollArea" class="p-4 flex flex-col md:w-1/2 min-h-screen
-  scroll-smooth">
+  <main
+    id="scrollArea"
+    class="p-4 flex flex-col md:w-1/2 min-h-screen
+  scroll-smooth"
+  >
     <AboutMe />
     <Repos />
     <CodeStats />

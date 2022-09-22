@@ -8,8 +8,8 @@
   let gitFail = false;
 </script>
 
-<div class="mb-32 rounded-lg" id="stats-section">
-  <h3 class="font-poppins text-2xl text-light-blue mb-2 md:text-3xl">Code stats</h3>
+<div class="mb-16 pt-20 rounded-lg" id="stats-section">
+  <h3 class="font-bold text-2xl mb-2 md:text-4xl">Code stats</h3>
   <p class="text-gray text-sm mb-6">Languages I've been working in the last 30 days.</p>
   {#if isLoading}
     <div class="flex align-middle w-full min-h-screen">

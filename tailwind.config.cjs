@@ -1,4 +1,6 @@
 /** @type {import('tailwindcss').Config} */
+const colors = require('tailwindcss/colors');
+
 module.exports = {
   content: ['./src/**/*.{html,js,svelte,ts}'],
   theme: {
@@ -12,8 +14,8 @@ module.exports = {
       'light-black': '#24283b'
     },
     extend: {
-      fontFamily: {
-        'poppins': ['"Poppins"', '"bold"']
+      colors: {
+        blue: colors.blue
       }
     },
   },

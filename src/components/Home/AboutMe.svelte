@@ -1,57 +1,18 @@
-<div class="mb-32 min-h-screen" id="about-section">
-  <h3 class="font-poppins text-2xl md:text-3xl text-light-blue mb-2">My most starred repos</h3>
-  <p class="text-gray text-sm mb-12">
-    This are some of my most popular repos on GitHub. If you want to see this site code you can do
-    it
-    <a
-      href="https://github.com/janoamaral/personal-blog-v2"
-      class="text-light-blue underline"
-      target="_BLANK">here</a
-    >
+<div class="mb-16 pt-2 min-h-screen" id="about-section">
+  <p class="mb-4">
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam quis blandit metus. In
+    scelerisque risus leo, ac consectetur diam volutpat vitae. Aliquam posuere diam ut est
+    pellentesque, quis aliquam nisi mollis. Interdum et malesuada fames ac ante ipsum primis in
+    faucibus. Mauris aliquet tortor dui, in iaculis felis congue ut. Aenean id ex eget urna eleifend
+    vehicula. Vivamus enim elit, faucibus sit amet maximus ut, suscipit eget velit. Phasellus vitae
+    augue eget odio pulvinar efficitur. Sed ac nibh nibh.
   </p>
-  <p class="text-gray text-sm mb-12">
-    This are some of my most popular repos on GitHub. If you want to see this site code you can do
-    it
-    <a
-      href="https://github.com/janoamaral/personal-blog-v2"
-      class="text-light-blue underline"
-      target="_BLANK">here</a
-    >
-  </p>
-  <p class="text-gray text-sm mb-12">
-    This are some of my most popular repos on GitHub. If you want to see this site code you can do
-    it
-    <a
-      href="https://github.com/janoamaral/personal-blog-v2"
-      class="text-light-blue underline"
-      target="_BLANK">here</a
-    >
-  </p>
-  <p class="text-gray text-sm mb-12">
-    This are some of my most popular repos on GitHub. If you want to see this site code you can do
-    it
-    <a
-      href="https://github.com/janoamaral/personal-blog-v2"
-      class="text-light-blue underline"
-      target="_BLANK">here</a
-    >
-  </p>
-  <p class="text-gray text-sm mb-12">
-    This are some of my most popular repos on GitHub. If you want to see this site code you can do
-    it
-    <a
-      href="https://github.com/janoamaral/personal-blog-v2"
-      class="text-light-blue underline"
-      target="_BLANK">here</a
-    >
-  </p>
-  <p class="text-gray text-sm mb-12">
-    This are some of my most popular repos on GitHub. If you want to see this site code you can do
-    it
-    <a
-      href="https://github.com/janoamaral/personal-blog-v2"
-      class="text-light-blue underline"
-      target="_BLANK">here</a
-    >
+  <p class="">
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam quis blandit metus. In
+    scelerisque risus leo, ac consectetur diam volutpat vitae. Aliquam posuere diam ut est
+    pellentesque, quis aliquam nisi mollis. Interdum et malesuada fames ac ante ipsum primis in
+    faucibus. Mauris aliquet tortor dui, in iaculis felis congue ut. Aenean id ex eget urna eleifend
+    vehicula. Vivamus enim elit, faucibus sit amet maximus ut, suscipit eget velit. Phasellus vitae
+    augue eget odio pulvinar efficitur. Sed ac nibh nibh.
   </p>
 </div>

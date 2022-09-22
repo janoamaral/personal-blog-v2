@@ -28,8 +28,8 @@
   });
 </script>
 
-<div class="mb-24" id="posts-section">
-  <h3 class="font-poppins text-2xl md:text-3xl text-light-blue mb-2">Latest posts</h3>
+<div class="mb-16 pt-20" id="posts-section">
+  <h3 class="font-bold text-2xl md:text-4xl mb-2">Latest posts</h3>
   <p class="text-gray text-sm mb-12">
     This are some of my most popular repos on GitHub. If you want to see this site code you can do
     it
@@ -78,8 +78,8 @@
             </div>
             <div class="xl:absolute bottom-0 left-0 w-full p-6 pb-8">
               <p
-                class="font-poppins uppercase text-lg md:text-2xl
-        mb-1 place-items-end"
+                class="font-bold text-lg md:text-2xl
+        mb-4 place-items-end"
               >
                 {post.Title}
               </p>
