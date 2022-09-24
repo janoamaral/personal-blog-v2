@@ -7,7 +7,10 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 </svelte:head>
 
-<div class="text-white font-sans" style="background:url(noisy_net.webp)">
+<div
+  class="text-white font-sans"
+  style="background:url(noisy_net.webp) black"
+>
   <slot />
   <div
     class="fixed top-0 left-0 z-20 w-full h-32 pointer-events-none

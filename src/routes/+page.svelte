@@ -84,7 +84,7 @@
       class="font-mono font-bold text-2xl md:text-xl text-blue-300
     cursor"
     >
-      ~# Freelance system analyst
+      ~$ Freelance system analyst
     </h2>
     <p class="text-gray mt-10">
       👋Hi! I'm Alejandro Amaral. An all rounder. From backend to frontend, sysadmin to customer

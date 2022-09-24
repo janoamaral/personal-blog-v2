@@ -36,7 +36,7 @@
   {/if}
   <h4 class="font-bold text-2xl mb-2 md:text-2xl">Tech stack</h4>
   <p class="text-gray text-sm mb-6">
-    Technologies that I have a working knowledge and used to build applications.
+    Technologies that I have a working knowledge and use to ship products.
   </p>
   <iframe
     loading="lazy"
@@ -47,4 +47,5 @@
     data-stack-embed="true"
     frameborder="0"
   />
+  <script src="client-code.js" async></script>
 </div>
