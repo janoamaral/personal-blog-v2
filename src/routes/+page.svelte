@@ -81,13 +81,13 @@
   <header class="p-4 md:w-1/3 md:fixed">
     <h1 class="font-bold text-5xl md:text-6xl">Jano Amaral</h1>
     <h2
-      class="font-mono font-bold text-2xl md:text-xl text-blue-300
+      class="font-mono font-bold text-xl md:text-xl text-blue-300
     cursor"
     >
       ~$ Freelance system analyst
     </h2>
     <p class="text-gray mt-10">
-      👋Hi! I'm Alejandro Amaral. An all rounder. From backend to frontend, sysadmin to customer
+      👋Hi! I'm Alejandro (aka Jano) Amaral. An all rounder. From backend to frontend, sysadmin to customer
       service. In love with web performance. Never stop learning. Currently @<a
         class="text-light-blue underline"
         href="https://kit.svelte.dev">Taggify</a

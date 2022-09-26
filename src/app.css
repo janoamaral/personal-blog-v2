@@ -53,9 +53,8 @@ body {
 }
 
 .cursor::after{
-  content: "█";
+  content: "▁";
   animation: blinker 1.2s linear infinite;
-  color: white;
   margin-left: .3em;
 }
 
