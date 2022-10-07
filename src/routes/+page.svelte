@@ -79,16 +79,16 @@
 
 <div class="flex flex-col md:flex-row container m-auto pt-16 lg:pt-16">
   <header class="p-4 md:w-1/3 md:fixed">
-    <h1 class="font-bold text-5xl md:text-6xl">Jano Amaral</h1>
-    <h2
-      class="font-mono font-bold text-xl md:text-xl text-blue-300
-    cursor"
-    >
-      ~$ Freelance system analyst
-    </h2>
+    <h1 class="font-bold text-5xl md:text-5xl">
+      👋 Hi! I'm
+      <span
+        style="background:linear-gradient(122.25deg, #ff4c88 12.16%, #ff8a63 70.98%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;"
+        >Jano Amaral</span
+      >, freelance systems analyst
+    </h1>
     <p class="text-gray mt-10">
-      👋Hi! I'm Alejandro (aka Jano) Amaral. An all rounder. From backend to frontend, sysadmin to customer
-      service. In love with web performance. Never stop learning. Currently @<a
+      An all rounder. From backend to frontend, sysadmin to customer service. In love with web
+      performance. Never stop learning. Currently @<a
         class="text-light-blue underline"
         href="https://kit.svelte.dev">Taggify</a
       >.

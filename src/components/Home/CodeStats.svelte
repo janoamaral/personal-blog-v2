@@ -20,7 +20,13 @@
 </script>
 
 <div class="mb-8 pt-20 rounded-lg" id="stats-section">
-  <h3 class="font-bold text-2xl mb-2 md:text-4xl">Code stats</h3>
+  <h3 class="font-bold text-2xl mb-2 md:text-4xl">
+    <span
+      style="background:linear-gradient(122.25deg, #00FF48 12.16%, #09D18B 70.98%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;"
+    >
+      Code stats.
+    </span>
+  </h3>
   <p class="text-gray text-sm mb-6">Languages I've been working in the last 30 days.</p>
   {#if isLoading}
     <div class="flex align-middle w-full min-h-screen">
