@@ -11,14 +11,13 @@
     isLoading = true;
     //data = await fetch('https://api.github.com/users/janoamaral/repos').then((x) => x.json());
 
-    Promise.allSettled([fetch('http://localhost:1337/posts')])
+    Promise.allSettled([fetch('http://localhost:1337/posts?_limit=6&_sort=PublishDate:DESC')])
       .then(async ([resPosts]) => {
         const resPostsResponse = resPosts.value;
         return [await resPostsResponse.json()];
       })
       .then((res) => {
         postList = res[0].slice(0, 6);
-        console.log(postList);
         isLoading = false;
       })
       .catch((err) => {
@@ -29,8 +28,8 @@
   });
 </script>
 
-<div class="mb-16">
-  <h3 class="font-poppins text-2xl md:text-3xl text-light-blue mb-2">Latest posts</h3>
+<div class="mb-16 pt-20" id="posts-section">
+  <h3 class="font-bold text-2xl md:text-4xl mb-2">Latest posts</h3>
   <p class="text-gray text-sm mb-12">
     This are some of my most popular repos on GitHub. If you want to see this site code you can do
     it
@@ -48,37 +47,56 @@
     <p class="text-gray text-sm mb-6 text-center">⚠️ Something goes wrong loading this...</p>
     <video autoplay loop muted><source src={fail} type="video/mp4" /></video>
   {:else}
-    <div class="w-full xl:columns-2 xl:space-y-5 faux-masonry xl:pt-16">
+    <div
+      class="w-full xl:columns-2 xl:space-y-5 faux-masonry xl:pt-16
+    group"
+    >
       {#each postList as post}
         <div class="w-full">
           <a
             href={post.category.Name}
             target="_BLANK"
             class="flex flex-col bg-light-black p-8 rounded-sm
-          transition-all ease-in hover:scale-105 w-full xl:h-80
-          align-bottom mb-4 xl:mb-0"
+          transition-all ease-in hover:scale-105 w-full xl:h-96
+          mb-4 xl:mb-0 items-bottom relative group-hover:opacity-50
+          hover-full"
           >
-            <p
-              class="uppercase text-xs mb-2 font-bold
-          tracking-widest font-mono text-dim-white"
-            >
-              {post.category.Name || 'Other'}
-            </p>
-            <p
-              class="font-poppins uppercase text-lg md:text-2xl
-        mb-1"
-            >
-              {post.Title}
-            </p>
-            <p class="mb-3 text-dim-white font-sm">{post.Description}</p>
-            <p class="text-xs">⭐ {post.stargazers_count}</p>
+            <div>
+              <p
+                class="uppercase text-xs mb-2 font-bold
+          tracking-widest font-mono"
+              >
+                {post.category.Name || 'Other'}
+              </p>
+              <p class="text-xs text-dim-white">
+                {new Intl.DateTimeFormat(navigator.languages[0], {
+                  day: '2-digit',
+                  month: '2-digit',
+                  year: 'numeric'
+                }).format(new Date(post.PublishDate))}
+              </p>
+            </div>
+            <div class="xl:absolute bottom-0 left-0 w-full p-6 pb-8">
+              <p
+                class="font-bold text-lg md:text-2xl
+        mb-4 place-items-end"
+              >
+                {post.Title}
+              </p>
+              <p class="mb-3 text-dim-white font-sm">{post.Description}</p>
+            </div>
           </a>
         </div>
       {/each}
     </div>
-    <a href="#" class="inline-block w-full text-center p-2 rounded-sm
-    bg-light-blue text-black font-mono font-bold uppercase mt-6 mb-2">Go to the blog</a>
-    <small class="text-light-blue text-center w-full
-    inline-block">Sorry... spanish only</small>
+    <a
+      href="#"
+      class="inline-block w-full text-center p-2 rounded-sm
+    bg-light-blue text-black font-mono font-bold uppercase mt-6 mb-2">Go to the blog</a
+    >
+    <small
+      class="text-light-blue text-center w-full
+    inline-block">Sorry... spanish only</small
+    >
   {/if}
 </div>

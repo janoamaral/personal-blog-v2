@@ -1,6 +1,7 @@
 <script>
   import { onMount } from 'svelte';
   import Loader from '../Loader/Loader.svelte';
+  import Icon from './Icons.svelte';
   import fail from '../../static/dayum.mp4';
 
   let gitRepos = [];
@@ -22,17 +23,19 @@
       })
       .then((res) => {
         const data = res[0];
-        gitRepos = data.sort((a, b) => {
-          return b.stargazers_count - a.stargazers_count;
-        });
-        let formatedLogico = res[1].sort((a, b) => {
-          return b.stargazers_count - a.stargazers_count;
-        });
-        gitRepos = gitRepos.slice(0, 3);
-        gitRepos.push(...formatedLogico.slice(0, 3));
-        gitRepos = gitRepos.sort((a, b) => {
-          return b.stargazers_count - a.stargazers_count;
-        });
+        if (data) {
+          gitRepos = data.sort((a, b) => {
+            return b.stargazers_count - a.stargazers_count;
+          });
+          let formatedLogico = res[1].sort((a, b) => {
+            return b.stargazers_count - a.stargazers_count;
+          });
+          gitRepos = gitRepos.slice(0, 3);
+          gitRepos.push(...formatedLogico.slice(0, 3));
+          gitRepos = gitRepos.sort((a, b) => {
+            return b.stargazers_count - a.stargazers_count;
+          });
+        }
         isLoading = false;
       })
       .catch((err) => {
@@ -43,14 +46,24 @@
   });
 </script>
 
-<div class="mb-24">
-  <h3 class="font-poppins text-2xl md:text-3xl text-light-blue mb-2">My most starred repos</h3>
+<div class="mb-16 pt-20" id="repos-section">
+  <div class="text-center md:text-left mb-3">
+    <Icon type="star" gradientFrom="173, 182, 255" gradientTo="174, 109, 255" />
+    <h3 class="font-bold text-3xl md:text-4xl mb-2">
+      My
+      <span
+        style="background:linear-gradient(122.25deg, #ADB6FF 12.16%, #AE6DFF 70.98%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;"
+      >
+        most starred
+      </span>repos.
+    </h3>
+  </div>
   <p class="text-gray text-sm mb-12">
     This are some of my most popular repos on GitHub. If you want to see this site code you can do
     it
     <a
       href="https://github.com/janoamaral/personal-blog-v2"
-      class="text-light-blue underline"
+      class="text-light-blue underline font-mono font-bold"
       target="_BLANK">here</a
     >
   </p>
@@ -62,23 +75,26 @@
     <p class="text-gray text-sm mb-6 text-center">⚠️ Something goes wrong loading this...</p>
     <video autoplay loop muted><source src={fail} type="video/mp4" /></video>
   {:else}
-    {#each gitRepos as repo}
-      <a
-        href={repo.html_url}
-        target="_BLANK"
-        class="flex flex-col mb-4 bg-light-black p-8 rounded-sm
-          transition-all ease-in hover:scale-105"
-      >
-        <p
-          class="uppercase text-xs mb-2 font-bold
-          tracking-widest font-mono text-dim-white"
+    <div class="group">
+      {#each gitRepos as repo}
+        <a
+          href={repo.html_url}
+          target="_BLANK"
+          class="flex flex-col mb-4 bg-light-black p-8 rounded-sm
+          transition-all ease-in hover:scale-110 group-hover:opacity-50
+          hover-full"
         >
-          {repo.language || 'Other'}
-        </p>
-        <p class="font-poppins uppercase text-lg md:text-2xl mb-1">{repo.name}</p>
-        <p class="mb-3 text-dim-white font-sm">{repo.description}</p>
-        <p class="text-xs">⭐ {repo.stargazers_count}</p>
-      </a>
-    {/each}
+          <p
+            class="uppercase text-xs mb-2 font-bold
+          tracking-widest font-mono text-dim-white"
+          >
+            {repo.language || 'Other'}
+          </p>
+          <p class="font-bold text-lg md:text-2xl mb-1">{repo.name}</p>
+          <p class="mb-3 text-dim-white font-sm">{repo.description}</p>
+          <p class="text-xs">⭐ {repo.stargazers_count}</p>
+        </a>
+      {/each}
+    </div>
   {/if}
 </div>
