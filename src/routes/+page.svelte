@@ -79,8 +79,8 @@
 
 <div class="flex flex-col md:flex-row container m-auto pt-16 lg:pt-16">
   <header class="p-4 md:w-1/3 md:fixed">
-    <h1 class="font-bold text-5xl md:text-5xl">
-      👋 Hi! I'm
+    <h1 class="font-bold text-5xl md:text-6xl ">
+      👋 Hi! I'm<br />
       <span
         style="background:linear-gradient(122.25deg, #ff4c88 12.16%, #ff8a63 70.98%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;"
         >Jano Amaral</span

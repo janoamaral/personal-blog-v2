@@ -1,6 +1,7 @@
 <script>
   import { onMount } from 'svelte';
   import Loader from '../Loader/Loader.svelte';
+  import Icon from './Icons.svelte';
   import fail from '../../static/dayum.mp4';
 
   let gitRepos = [];
@@ -46,14 +47,17 @@
 </script>
 
 <div class="mb-16 pt-20" id="repos-section">
-  <h3 class="font-bold text-2xl md:text-4xl mb-2">
-    My
-    <span
-      style="background:linear-gradient(122.25deg, #ADB6FF 12.16%, #AE6DFF 70.98%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;"
-    >
-      most starred
-    </span>repos.
-  </h3>
+  <div class="text-center md:text-left mb-3">
+    <Icon type="star" gradientFrom="173, 182, 255" gradientTo="174, 109, 255" />
+    <h3 class="font-bold text-3xl md:text-4xl mb-2">
+      My
+      <span
+        style="background:linear-gradient(122.25deg, #ADB6FF 12.16%, #AE6DFF 70.98%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;"
+      >
+        most starred
+      </span>repos.
+    </h3>
+  </div>
   <p class="text-gray text-sm mb-12">
     This are some of my most popular repos on GitHub. If you want to see this site code you can do
     it

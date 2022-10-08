@@ -29,15 +29,17 @@
 </script>
 
 <div class="mb-8 pt-2 rounded-lg h-screen" id="about-section">
-  <Icon type="terminal" gradientFrom="76, 252, 255" gradientTo="76, 160, 255" />
-  <h3 class="font-bold text-2xl mb-2 md:text-4xl">
-    Who
-    <span
-      style="background:linear-gradient(122.25deg, #4CFCFF 12.16%, #4C97FF 70.98%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;"
-    >
-      am I.
-    </span>
-  </h3>
+  <div class="text-center md:text-left mb-4">
+    <Icon type="user" gradientFrom="76, 252, 255" gradientTo="76, 160, 255" />
+    <h3 class="font-bold text-3xl mb-2 md:text-4xl">
+      Who
+      <span
+        style="background:linear-gradient(122.25deg, #4CFCFF 12.16%, #4C97FF 70.98%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;"
+      >
+        am I.
+      </span>
+    </h3>
+  </div>
   <p class="mb-4">
     I'm a systems analyst based in Bolívar a beautiful small city in Buenos Aires - Argentina. I
     specialise in help teams and clients to build products from the ground up. In 13+ years of
