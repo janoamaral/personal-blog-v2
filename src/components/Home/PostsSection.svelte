@@ -1,6 +1,7 @@
 <script>
   import { onMount } from 'svelte';
   import Loader from '../Loader/Loader.svelte';
+  import Icon from './Icons.svelte';
   import fail from '../../static/dayum.mp4';
 
   let postList = [];
@@ -29,16 +30,26 @@
 </script>
 
 <div class="mb-16 pt-20" id="posts-section">
-  <h3 class="font-bold text-2xl md:text-4xl mb-2">Latest posts</h3>
-  <p class="text-gray text-sm mb-12">
-    This are some of my most popular repos on GitHub. If you want to see this site code you can do
-    it
-    <a
-      href="https://github.com/janoamaral/personal-blog-v2"
-      class="text-light-blue underline"
-      target="_BLANK">here</a
-    >
-  </p>
+  <div class="text-center mb-4">
+    <Icon type="edit" gradientFrom="173, 182, 255" gradientTo="174, 109, 255" />
+    <h3 class="font-bold text-3xl mb-2 md:text-4xl">
+      Checkout my latest
+      <span
+        style="background:linear-gradient(122.25deg, #ADB6FF 12.16%, #AE6DFF 70.98%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;"
+      >
+        blog posts.
+      </span>
+    </h3>
+    <p class="text-gray text-sm mb-12">
+      This are some of my most popular repos on GitHub. If you want to see this site code you can do
+      it
+      <a
+        href="https://github.com/janoamaral/personal-blog-v2"
+        class="text-light-blue underline"
+        target="_BLANK">here</a
+      >
+    </p>
+  </div>
   {#if isLoading}
     <div class="flex align-middle w-full min-h-screen">
       <Loader />
