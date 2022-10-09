@@ -2,15 +2,7 @@
   import '../app.css';
 </script>
 
-<svelte:head>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-</svelte:head>
-
-<div
-  class="text-white font-sans"
-  style="background:url(noisy_net.webp) #1a1b26"
->
+<div class="text-white font-sans" style="background:url(blackorchid.webp) #1a1b26">
   <slot />
   <div
     class="fixed top-0 left-0 z-20 w-full h-24 pointer-events-none

@@ -21,7 +21,7 @@
 </script>
 
 <div class="mb-8 pt-20 rounded-lg" id="stats-section">
-  <div class="text-center mb-3">
+  <div class="text-center pb-10">
     <Icon type="terminal" gradientFrom="0, 255, 72" gradientTo="0, 255, 72" />
     <h3 class="font-bold text-3xl mb-2 md:text-4xl">
       Tech stack and
@@ -38,7 +38,7 @@
       <Loader />
     </div>
   {:else if gitFail}
-    <p class="text-gray text-sm mb-6 text-center">⚠️ Something goes wrong loading this...</p>
+    <p class="text-gray text-sm mb-6 text-center">⚠️ Something went wrong while loading this...</p>
     <video autoplay loop muted><source src={fail} type="video/mp4" /></video>
   {:else}
     <figure class="mb-8">

@@ -47,7 +47,7 @@
 </script>
 
 <div class="mb-16 pt-20" id="repos-section">
-  <div class="text-center mb-3">
+  <div class="text-center pb-10">
     <Icon type="star" gradientFrom="255, 225, 76" gradientTo="255, 109, 46" />
     <h3 class="font-bold text-3xl md:text-4xl mb-1">
       My
@@ -58,13 +58,13 @@
       </span>repos.
     </h3>
     <p class="text-gray text-sm mb-12">
-      This are some of my most popular repos on GitHub. If you want to see this site code you can do
-      it
+      This are some of my most popular open source projects on GitHub.
+      <br />If you want to see this site code you can do it
       <a
         href="https://github.com/janoamaral/personal-blog-v2"
-        class="text-light-blue underline font-mono font-bold"
+        class="text-light-blue underline"
         target="_BLANK">here</a
-      >
+      >.
     </p>
   </div>
   {#if isLoading}
@@ -72,7 +72,7 @@
       <Loader />
     </div>
   {:else if gitFail}
-    <p class="text-gray text-sm mb-6 text-center">⚠️ Something goes wrong loading this...</p>
+    <p class="text-gray text-sm mb-6 text-center">⚠️ Something went wrong while loading this...</p>
     <video autoplay loop muted><source src={fail} type="video/mp4" /></video>
   {:else}
     <div class="group">

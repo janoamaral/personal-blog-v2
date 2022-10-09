@@ -21,8 +21,8 @@
   });
 </script>
 
-<div class="mb-8 text-md pt-2 rounded-lg h-screen" id="about-section">
-  <div class="text-center mb-4">
+<div class="mb-8 text-md pt-2 rounded-lg" id="about-section">
+  <div class="text-center mb-10">
     <Icon type="user" gradientFrom="76, 252, 255" gradientTo="76, 160, 255" />
     <h3 class="font-bold text-3xl mb-2 md:text-4xl">
       Know me a
@@ -40,15 +40,17 @@
     DevOps, coding back and frontend and also dealing with clients and end users.
   </p>
   <p class="mb-8">
-    Not everything in life is about job: I'm a minimalist at heart, open source lover and bad
+    But not everything in me is about job: I'm a minimalist at heart, open source lover and bad
     harmonica player. I enjoy cooking for my family and friends, being italian pastas my forte. Avid
-    reader (<a class="text-light-blue underline font-mono font-bold" href="#">books I've read</a>),
+    <a class="text-light-blue underline"
+    href="#">reader</a> and with a very ecletic taste in music: from classical music to K/J-Pop and
+    everything in between. Nature conscious: I don't own a
+    car and prefer walk / cycling, avoid plastics everytime I can.
   </p>
   <h4 class="font-bold text-2xl mb-2 md:text-2xl">Random fact about me.</h4>
   {#if fetchFail}
-    <p class="text-gray text-sm mb-6 text-center">⚠️ Something goes wrong loading this...</p>
+    <p class="text-gray text-sm mb-6 text-center">⚠️ Something went wrong while loading this...</p>
   {:else}
     <p class="mb-8">{randomFact.fact || ' '}</p>
   {/if}
-  <h3 class="font-bold text-2xl pt-8 mb-2 md:text-4xl">Works.</h3>
 </div>

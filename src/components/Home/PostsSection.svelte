@@ -30,10 +30,10 @@
 </script>
 
 <div class="mb-16 pt-20" id="posts-section">
-  <div class="text-center mb-4">
+  <div class="text-center mb-20">
     <Icon type="edit" gradientFrom="173, 182, 255" gradientTo="174, 109, 255" />
     <h3 class="font-bold text-3xl mb-2 md:text-4xl">
-      Checkout my latest
+      Checkout the latest
       <span
         style="background:linear-gradient(122.25deg, #ADB6FF 12.16%, #AE6DFF 70.98%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;"
       >
@@ -41,13 +41,7 @@
       </span>
     </h3>
     <p class="text-gray text-sm mb-12">
-      This are some of my most popular repos on GitHub. If you want to see this site code you can do
-      it
-      <a
-        href="https://github.com/janoamaral/personal-blog-v2"
-        class="text-light-blue underline"
-        target="_BLANK">here</a
-      >
+      I love to write and share knowlegde about tech, tutorials, opinions and cooking guides.
     </p>
   </div>
   {#if isLoading}
@@ -55,7 +49,7 @@
       <Loader />
     </div>
   {:else if fetchFail}
-    <p class="text-gray text-sm mb-6 text-center">⚠️ Something goes wrong loading this...</p>
+    <p class="text-gray text-sm mb-6 text-center">⚠️ Something went wrong while loading this...</p>
     <video autoplay loop muted><source src={fail} type="video/mp4" /></video>
   {:else}
     <div
@@ -100,14 +94,14 @@
         </div>
       {/each}
     </div>
-    <a
-      href="#"
-      class="inline-block w-full text-center p-2 rounded-sm
-    bg-light-blue text-black font-mono font-bold uppercase mt-6 mb-2">Go to the blog</a
-    >
-    <small
-      class="text-light-blue text-center w-full
-    inline-block">Sorry... spanish only</small
-    >
   {/if}
+  <a
+    href="/blog"
+    class="inline-block w-full text-center p-2 rounded-sm
+    bg-light-blue text-black font-mono font-bold uppercase mt-6 mb-2">Go to the blog</a
+  >
+  <small
+    class="text-light-blue text-center w-full
+    inline-block">Sorry... spanish only</small
+  >
 </div>
