@@ -152,11 +152,7 @@
     </ul>
   </header>
   <div class="p-4 md:w-1/2" />
-  <main
-    id="scrollArea"
-    class="p-4 flex flex-col md:w-1/2 min-h-screen
-  scroll-smooth"
-  >
+  <main id="scrollArea" class="p-4 flex flex-col md:w-1/2 min-h-screen scroll-smooth">
     <AboutMe />
     <Repos />
     <CodeStats />

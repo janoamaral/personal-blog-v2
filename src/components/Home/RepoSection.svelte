@@ -47,32 +47,32 @@
 </script>
 
 <div class="mb-16 pt-20" id="repos-section">
-  <div class="text-center md:text-left mb-3">
-    <Icon type="star" gradientFrom="173, 182, 255" gradientTo="174, 109, 255" />
-    <h3 class="font-bold text-3xl md:text-4xl mb-2">
+  <div class="text-center pb-10">
+    <Icon type="star" gradientFrom="255, 225, 76" gradientTo="255, 109, 46" />
+    <h3 class="font-bold text-3xl md:text-4xl mb-1">
       My
       <span
-        style="background:linear-gradient(122.25deg, #ADB6FF 12.16%, #AE6DFF 70.98%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;"
+        style="background:linear-gradient(122.25deg, #FFE14C 12.16%, #FF6D2E 70.98%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;"
       >
         most starred
       </span>repos.
     </h3>
+    <p class="text-gray text-sm mb-12">
+      This are some of my most popular open source projects on GitHub.
+      <br />If you want to see this site code you can do it
+      <a
+        href="https://github.com/janoamaral/personal-blog-v2"
+        class="text-light-blue underline"
+        target="_BLANK">here</a
+      >.
+    </p>
   </div>
-  <p class="text-gray text-sm mb-12">
-    This are some of my most popular repos on GitHub. If you want to see this site code you can do
-    it
-    <a
-      href="https://github.com/janoamaral/personal-blog-v2"
-      class="text-light-blue underline font-mono font-bold"
-      target="_BLANK">here</a
-    >
-  </p>
   {#if isLoading}
     <div class="flex align-middle w-full min-h-screen">
       <Loader />
     </div>
   {:else if gitFail}
-    <p class="text-gray text-sm mb-6 text-center">⚠️ Something goes wrong loading this...</p>
+    <p class="text-gray text-sm mb-6 text-center">⚠️ Something went wrong while loading this...</p>
     <video autoplay loop muted><source src={fail} type="video/mp4" /></video>
   {:else}
     <div class="group">

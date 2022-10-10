@@ -39,11 +39,11 @@ body {
 }
 
 .gradient-y-transparent-night {
-    background: linear-gradient(180deg,hsla(0,0%,8%,0),#1a1b26);
+    background: linear-gradient(180deg,hsla(0,0%,8%,0),#111);
 }
 
 .gradient-y-night-transparent {
-    background: linear-gradient(0deg,hsla(0,0%,8%,0),#1a1b26);
+    background: linear-gradient(0deg,hsla(0,0%,8%,0),#111);
 }
 
 @media screen and (max-width: 1280px) {
