@@ -10,7 +10,7 @@
 
   let currentPage = 0;
   let totalPages = 1;
-  let postPerPage = 6;
+  let postPerPage = 3;
 
   let postList = [];
   let isLoading = false;
@@ -53,9 +53,9 @@
   });
 </script>
 
-<div class="flex flex-col container min-h-screen max-w-4xl m-auto pt-16 pb-16 lg:pt-16">
+<div class="flex flex-col container min-h-screen max-w-5xl m-auto pt-16 pb-16 lg:pt-16">
   <header>
-    <div class="text-center mb-20">
+    <div class="text-center mb-20 px-4">
       <Icon type="edit" gradientFrom="173, 182, 255" gradientTo="174, 109, 255" />
       <h3 class="font-bold text-3xl mb-2 md:text-4xl">
         Checkout the latest
@@ -76,37 +76,38 @@
   {:else}
     <div>
       {#each postList as post}
-        <a href={`/blog/${post.Slug}`} class="flex flex-row mb-8 bg-black hover:scale-105 transition rounded-md">
-          <div class="w-1/2">
+        <a
+          href={`/blog/${post.Slug}`}
+          class="flex flex-col sm:flex-row mb-10 hover:scale-105 transition rounded-md"
+        >
+          <div class="w-full md:w-1/3">
             <img
               alt="thumbnail"
-              class="inline-block h-full w-full rounded-l-md"
+              class="inline-block h-full w-full md:rounded-md"
               style="object-fit:cover"
               src={`${API_ENDPOINT}${post.FeatureImage.formats.small.url}`}
             />
           </div>
 
-          <div class="w-3/4 p-8">
-            <div class="mb-8">
+          <div class="w-full md:w-3/4 p-8">
+            <div class="mb-2">
               <p
                 class="uppercase text-xs mb-2 font-bold
           tracking-widest font-mono"
+                style="background:linear-gradient(122.25deg, #FFE14C 12.16%, #FF6D2E 70.98%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;"
               >
                 {post.category.Name || 'Other'}
               </p>
-              <p class="text-xs text-dim-white">
-                {new Intl.DateTimeFormat(navigator.languages[0], {
-                  day: '2-digit',
-                  month: '2-digit',
-                  year: 'numeric'
-                }).format(new Date(post.PublishDate))}
-              </p>
             </div>
             <div>
-              <h2 class="font-bold text-xl md:text-3xl mb-4">
+              <h2 class="font-bold text-2xl md:text-3xl mb-6">
                 {post.Title}
               </h2>
-              <p class="mb-3 text-white font-sm">{post.Description}</p>
+              <p class="text-xs text-dim-white">
+                {new Intl.DateTimeFormat(navigator.languages[0], {
+                  dateStyle: 'long'
+                }).format(new Date(post.PublishDate))}
+              </p>
             </div>
           </div>
         </a>
