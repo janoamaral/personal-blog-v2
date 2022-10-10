@@ -77,7 +77,7 @@
     <div>
       {#each postList as post}
         <a
-          href={`/blog/${post.Slug}`}
+          href={`/blog/${post.id}/${post.Slug}`}
           class="flex flex-col sm:flex-row mb-10 hover:scale-105 transition rounded-md"
         >
           <div class="w-full md:w-1/3">
