@@ -1,12 +1,12 @@
 <script>
-  import { onMount } from 'svelte';
+  import SvelteMarkdown from 'svelte-markdown';
   import fail from '../../../../static/dayum.mp4';
   const API_ENDPOINT = import.meta.env.VITE_BACKEND_URL;
   import { page } from '$app/stores';
   let isLoading = false;
   let fetchFail = false;
 
-  export async function load(e) {
+  export function load(e) {
     isLoading = true;
     Promise.allSettled([fetch(`${API_ENDPOINT}/posts/${$page.params.id}`)])
       .then(async ([rawPost]) => {
@@ -28,7 +28,8 @@
   let post = load();
 </script>
 
-<div class="flex flex-col container min-h-screen max-w-6xl m-auto pt-16 pb-16 lg:pt-16">
+<div class="flex flex-col container min-h-screen max-w-6xl m-auto pt-16 pb-16 lg:pt-16
+text-white">
   {#if isLoading}
     <p>Test</p>
   {:else if fetchFail}
@@ -66,9 +67,9 @@
         style="object-fit:cover"
         src={`${API_ENDPOINT}${post.FeatureImage.formats.large.url}`}
       />
-      <div class="flex flex-col container max-w-4xl m-auto mt-10">
-        {post.Description}
-      </div>
+      <article class="flex flex-col container max-w-4xl m-auto mt-10">
+        <SvelteMarkdown source={post.Content} />
+      </article>
     </div>
   {/if}
 </div>

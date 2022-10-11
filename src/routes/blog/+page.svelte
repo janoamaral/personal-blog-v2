@@ -1,14 +1,14 @@
 <script>
   import { onMount } from 'svelte';
   import Icon from '../../components/Home/Icons.svelte';
-  import Loader from '../../components/Loader/Loader.svelte';
   import fail from '../../static/dayum.mp4';
+  import { page } from '$app/stores';
 
   const API_ENDPOINT = import.meta.env.VITE_BACKEND_URL;
 
   let fetchFail = false;
 
-  let currentPage = 0;
+  let currentPage = Number($page.url.searchParams.get('page')) - 1;
   let totalPages = 1;
   let postPerPage = 3;
 
@@ -41,11 +41,6 @@
       .finally(() => {
         isLoading = false;
       });
-  };
-
-  const handlePagination = async (pageIndex) => {
-    currentPage = pageIndex - 1;
-    LoadPosts();
   };
 
   onMount(() => {
@@ -120,9 +115,10 @@
           w-5 h-6 pt-1
           text-center ml-2 cursor-pointer 
           ${currentPage === index ? 'bg-white text-black' : ''}`}
-          on:click={handlePagination(index + 1)}
         >
-          {index + 1}
+          <a href={`/blog?page=${index + 1}`}>
+            {index + 1}
+          </a>
         </li>
       {/each}
     </ul>
