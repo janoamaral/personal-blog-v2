@@ -55,15 +55,14 @@
     <div class="text-center mb-20 px-4">
       <Icon type="edit" gradientFrom="173, 182, 255" gradientTo="174, 109, 255" />
       <h3 class="font-bold text-3xl mb-2 md:text-4xl">
-        Checkout the latest
         <span
           style="background:linear-gradient(122.25deg, #ADB6FF 12.16%, #AE6DFF 70.98%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;"
         >
-          blog posts.
+          Blog.
         </span>
       </h3>
       <p class="text-gray text-sm mb-12">
-        I love to write and share knowlegde about tech, tutorials, opinions and cooking guides.
+        Noticias, guias, opiniones, tutoriales y lo que se cruce. Lo importante es poder compartir.
       </p>
     </div>
   </header>

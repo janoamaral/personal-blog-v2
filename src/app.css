@@ -53,9 +53,10 @@ body {
 }
 
 .cursor::after{
-  content: "▁";
+  content: "▮";
   animation: blinker 1.2s linear infinite;
   margin-left: .3em;
+  color:#ff8a63;
 }
 
 @keyframes blinker{
@@ -89,7 +90,7 @@ article  iframe{
 }
 article  a:not(.btn){
     text-decoration:none;
-    color:#0070c9
+    color:#4CFCFF;
 }
 article  a:not(.btn):hover{
     text-decoration:underline
