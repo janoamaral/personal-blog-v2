@@ -1,14 +1,13 @@
 <script>
-  import { onMount } from 'svelte';
   import Icon from '../../components/Home/Icons.svelte';
-  import Loader from '../../components/Loader/Loader.svelte';
   import fail from '../../static/dayum.mp4';
+  import { page } from '$app/stores';
 
   const API_ENDPOINT = import.meta.env.VITE_BACKEND_URL;
 
   let fetchFail = false;
 
-  let currentPage = 0;
+  let currentPage = Number($page.url.searchParams.get('page')) - 1;
   let totalPages = 1;
   let postPerPage = 3;
 
@@ -48,9 +47,7 @@
     LoadPosts();
   };
 
-  onMount(() => {
-    LoadPosts();
-  });
+  $: LoadPosts();
 </script>
 
 <div class="flex flex-col container min-h-screen max-w-5xl m-auto pt-16 pb-16 lg:pt-16">
@@ -58,15 +55,14 @@
     <div class="text-center mb-20 px-4">
       <Icon type="edit" gradientFrom="173, 182, 255" gradientTo="174, 109, 255" />
       <h3 class="font-bold text-3xl mb-2 md:text-4xl">
-        Checkout the latest
         <span
           style="background:linear-gradient(122.25deg, #ADB6FF 12.16%, #AE6DFF 70.98%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;"
         >
-          blog posts.
+          Blog.
         </span>
       </h3>
       <p class="text-gray text-sm mb-12">
-        I love to write and share knowlegde about tech, tutorials, opinions and cooking guides.
+        Noticias, guias, opiniones, tutoriales y lo que se cruce. Lo importante es poder compartir.
       </p>
     </div>
   </header>
@@ -77,7 +73,7 @@
     <div>
       {#each postList as post}
         <a
-          href={`/blog/${post.Slug}`}
+          href={`/blog/${post.id}/${post.Slug}`}
           class="flex flex-col sm:flex-row mb-10 hover:scale-105 transition rounded-md"
         >
           <div class="w-full md:w-1/3">
@@ -93,8 +89,8 @@
             <div class="mb-2">
               <p
                 class="uppercase text-xs mb-2 font-bold
-          tracking-widest font-mono"
-                style="background:linear-gradient(122.25deg, #FFE14C 12.16%, #FF6D2E 70.98%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;"
+          tracking-widest font-mono inline-block"
+                style="background:linear-gradient(122.25deg, #ADB6FF 12.16%, #AE6DFF 70.98%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;"
               >
                 {post.category.Name || 'Other'}
               </p>
@@ -120,9 +116,10 @@
           w-5 h-6 pt-1
           text-center ml-2 cursor-pointer 
           ${currentPage === index ? 'bg-white text-black' : ''}`}
-          on:click={handlePagination(index + 1)}
         >
-          {index + 1}
+          <a href={`/blog?page=${index + 1}`} on:click={handlePagination(index + 1)}>
+            {index + 1}
+          </a>
         </li>
       {/each}
     </ul>

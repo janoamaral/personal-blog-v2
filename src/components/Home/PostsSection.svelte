@@ -59,8 +59,7 @@
       {#each postList as post}
         <div class="w-full">
           <a
-            href={post.category.Name}
-            target="_BLANK"
+            href={`/blog/${post.id}/${post.Slug}`}
             class="flex flex-col bg-light-black p-8 rounded-sm
           transition-all ease-in hover:scale-105 w-full xl:h-96
           mb-4 xl:mb-0 items-bottom relative group-hover:opacity-50
@@ -96,7 +95,7 @@
     </div>
   {/if}
   <a
-    href="/blog"
+    href={`/blog?page=1`}
     class="inline-block w-full text-center p-2 rounded-sm
     bg-light-blue text-black font-mono font-bold uppercase mt-6 mb-2">Go to the blog</a
   >
