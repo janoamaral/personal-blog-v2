@@ -1,5 +1,4 @@
 <script>
-  import { onMount } from 'svelte';
   import Icon from '../../components/Home/Icons.svelte';
   import fail from '../../static/dayum.mp4';
   import { page } from '$app/stores';
@@ -43,9 +42,12 @@
       });
   };
 
-  onMount(() => {
+  const handlePagination = async (pageIndex) => {
+    currentPage = pageIndex - 1;
     LoadPosts();
-  });
+  };
+
+  $: LoadPosts();
 </script>
 
 <div class="flex flex-col container min-h-screen max-w-5xl m-auto pt-16 pb-16 lg:pt-16">
@@ -116,7 +118,7 @@
           text-center ml-2 cursor-pointer 
           ${currentPage === index ? 'bg-white text-black' : ''}`}
         >
-          <a href={`/blog?page=${index + 1}`}>
+          <a href={`/blog?page=${index + 1}`} on:click={handlePagination(index + 1)}>
             {index + 1}
           </a>
         </li>
