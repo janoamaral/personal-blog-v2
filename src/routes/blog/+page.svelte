@@ -93,8 +93,8 @@
             <div class="mb-2">
               <p
                 class="uppercase text-xs mb-2 font-bold
-          tracking-widest font-mono"
-                style="background:linear-gradient(122.25deg, #FFE14C 12.16%, #FF6D2E 70.98%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;"
+          tracking-widest font-mono inline-block"
+                style="background:linear-gradient(122.25deg, #ADB6FF 12.16%, #AE6DFF 70.98%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;"
               >
                 {post.category.Name || 'Other'}
               </p>
