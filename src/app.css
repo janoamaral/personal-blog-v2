@@ -6,6 +6,14 @@
   border: 1px dashed magenta
 }
 
+.gradient-text:hover{
+  background:linear-gradient(122.25deg, #4CFCFF 12.16%, #4C97FF 70.98%);
+  background-clip:text;
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+  color:#4C97FF;
+}
+
 .faux-masonry > div:nth-child(-n+3) {
   transform: translateY(-3em);
 }
@@ -55,7 +63,6 @@ body {
 .cursor::after{
   content: "▮";
   animation: blinker 1.2s linear infinite;
-  margin-left: .3em;
   color:#ff8a63;
 }
 

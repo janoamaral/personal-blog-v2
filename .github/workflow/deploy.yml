@@ -1,0 +1,21 @@
+name: Deploy dokku
+
+on:
+  push:
+    branches:
+      - master
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Clonar repositorio
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+
+      - name: Push a dokku
+        uses: dokku/github-action@v1.0.1
+        with:
+          git_remote_url: ${{ secrets.SSH_HOST }}
+          ssh_private_key: ${{ secrets.SSH_DEPLOY_KEY }}
+
