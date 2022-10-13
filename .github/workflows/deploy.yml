@@ -16,6 +16,6 @@ jobs:
       - name: Push a dokku
         uses: dokku/github-action@v1.0.1
         with:
-          git_remote_url: "ssh://dokku@devops.api.logico.ar:13372/blog-v2-front"
+          git_remote_url: ${{ secrets.SSH_HOST }}
           ssh_private_key: ${{ secrets.SSH_DEPLOY_KEY }}
 
