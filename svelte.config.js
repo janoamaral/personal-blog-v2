@@ -10,7 +10,11 @@ const config = {
   }),
 
   kit: {
-    adapter: node({ env: { port: process.env.PORT } })
+    adapter: node({
+      env: {
+        out: 'build'
+      }
+    })
   }
 };
 
