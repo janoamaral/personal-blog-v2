@@ -11,9 +11,7 @@ const config = {
 
   kit: {
     adapter: node({
-      env: {
-        out: 'build'
-      }
+      out: 'build'
     })
   }
 };
