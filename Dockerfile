@@ -37,6 +37,8 @@ RUN yarn build
 # stage run
 FROM nginx:1.18-alpine AS deploy-static
 
+ENV PORT 80
+EXPOSE 80
 WORKDIR /usr/share/nginx/html
 RUN rm -rf ./*
 COPY --from=build /app/build .
