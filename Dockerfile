@@ -24,22 +24,17 @@ CMD ["npm", "run", "dev", "--host", "0.0.0.0"]
 
 # stage build
 FROM node:16-alpine as build
-
 WORKDIR /app
-
-# copy everything to the container
 COPY . .
-
-# build SvelteKit app
 RUN yarn
 RUN yarn build
 
 # stage run
-FROM nginx:1.18-alpine AS deploy-static
-
-ENV PORT 80
-EXPOSE 80
-WORKDIR /usr/share/nginx/html
+FROM node:18-alpine AS deploy-static
+WORKDIR /app
+EXPOSE 3000
 RUN rm -rf ./*
+COPY --from=build /app/package.json .
 COPY --from=build /app/build .
-ENTRYPOINT ["nginx", "-g", "daemon off;"]
+RUN yarn --prod
+ENTRYPOINT ["node", "index.js"]
