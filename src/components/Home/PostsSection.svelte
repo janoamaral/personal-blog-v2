@@ -4,6 +4,8 @@
   import Icon from './Icons.svelte';
   import fail from '../../static/dayum.mp4';
 
+  const API_ENDPOINT = import.meta.env.VITE_BACKEND_URL;
+
   let postList = [];
   let isLoading = false;
   let fetchFail = false;
@@ -12,7 +14,7 @@
     isLoading = true;
     //data = await fetch('https://api.github.com/users/janoamaral/repos').then((x) => x.json());
 
-    Promise.allSettled([fetch('http://localhost:1337/posts?_limit=6&_sort=PublishDate:DESC')])
+    Promise.allSettled([fetch(`${API_ENDPOINT}/posts?_limit=6&_sort=PublishDate:DESC`)])
       .then(async ([resPosts]) => {
         const resPostsResponse = resPosts.value;
         return [await resPostsResponse.json()];

@@ -2,11 +2,13 @@
   import { onMount } from 'svelte';
   import Icon from './Icons.svelte';
 
+  const API_ENDPOINT = import.meta.env.VITE_BACKEND_URL;
+
   let randomFact = '';
   let fetchFail = false;
 
   onMount(async () => {
-    Promise.allSettled([fetch('http://localhost:1337/random-facts')])
+    Promise.allSettled([fetch(`${API_ENDPOINT}/random-facts`)])
       .then(async ([resPosts]) => {
         const resPostsResponse = resPosts.value;
         return [await resPostsResponse.json()];
