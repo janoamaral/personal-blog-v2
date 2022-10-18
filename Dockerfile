@@ -24,6 +24,7 @@ CMD ["npm", "run", "dev", "--host", "0.0.0.0"]
 
 # stage build
 FROM node:16-alpine as build
+ENV VITE_BACKEND_URL https://api.amaral.ar
 WORKDIR /app
 COPY . .
 RUN yarn
