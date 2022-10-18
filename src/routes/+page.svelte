@@ -87,7 +87,7 @@
       <span
         style="background:linear-gradient(122.25deg, #ff4c88 12.16%, #ff8a63 70.98%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;"
         >Alejandro Amaral</span
-      ><span class="opacity-70">, frelance systems analyst.</span>
+      ><span class="opacity-70">, freelance systems analyst.</span>
     </h1>
     <p class="text-gray mt-10 hidden">
       An all rounder. From backend to frontend, sysadmin to customer service. In love with web
