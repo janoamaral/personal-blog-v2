@@ -1,6 +1,7 @@
 <script>
   import SvelteMarkdown from 'svelte-markdown';
   import fail from '../../../../static/dayum.mp4';
+  import Loader from '../../../../components/Loader/Loader.svelte';
   const API_ENDPOINT = import.meta.env.VITE_BACKEND_URL;
   import { page } from '$app/stores';
   let isLoading = false;
@@ -31,7 +32,7 @@
 <div class="flex flex-col container min-h-screen max-w-6xl m-auto pt-16 pb-16 lg:pt-16
 text-white">
   {#if isLoading}
-    <p>Test</p>
+    <Loader />
   {:else if fetchFail}
     <p class="text-gray text-sm mb-6 text-center">⚠️ Something went wrong while loading this...</p>
     <video autoplay loop muted><source src={fail} type="video/mp4" /></video>
