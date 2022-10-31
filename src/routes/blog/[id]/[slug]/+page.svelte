@@ -29,8 +29,10 @@
   let post = load();
 </script>
 
-<div class="flex flex-col container min-h-screen max-w-6xl m-auto pt-16 pb-16 lg:pt-16
-text-white">
+<div
+  class="flex flex-col container min-h-screen max-w-6xl m-auto pt-16 pb-16 lg:pt-16
+text-white"
+>
   {#if isLoading}
     <Loader />
   {:else if fetchFail}
@@ -38,7 +40,7 @@ text-white">
     <video autoplay loop muted><source src={fail} type="video/mp4" /></video>
   {:else}
     <div class="w-full p-8 text-left">
-      <div class="flex flex-col container max-w-4xl m-auto">
+      <div class="flex flex-col container max-w-4xl m-auto text-center">
         <div class="mb-2">
           <p
             class="uppercase text-sm mb-2 font-bold
@@ -54,21 +56,12 @@ text-white">
           </p>
         </div>
         <div>
-          <h1 class="font-bold text-3xl md:text-4xl mb-4">
+          <h1 class="font-bold text-4xl md:text-5xl mb-4">
             {post.Title}
           </h1>
-          <p class="text-md mb-12 text-md">
-            {post.Description}
-          </p>
         </div>
       </div>
-      <img
-        alt="thumbnail"
-        class="inline-block h-full w-full md:rounded-md"
-        style="object-fit:cover"
-        src={`${API_ENDPOINT}${post.FeatureImage.formats.large.url}`}
-      />
-      <article class="flex flex-col container max-w-4xl m-auto mt-10">
+      <article class="flex flex-col container max-w-4xl m-auto mt-10 text-lg">
         <SvelteMarkdown source={post.Content} />
       </article>
     </div>
