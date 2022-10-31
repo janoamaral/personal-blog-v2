@@ -97,7 +97,7 @@ article  iframe{
 }
 article  a:not(.btn){
     text-decoration:none;
-    color:#4CFCFF;
+    color:rgb(125, 207, 255);
 }
 article  a:not(.btn):hover{
     text-decoration:underline
@@ -139,11 +139,14 @@ article img{
 }
 article blockquote{
     border-left:4px solid #0070c9;
-    padding:.5rem .5rem .5rem 2rem;
-    background:#F5F5F5;
-    margin:3rem 0;
-    font-size:.9rem
+    padding:1.5em .5em 0 2em;
+    margin:3em 0;
+    font-size: 1.5em;
+    font-family: -apple-system-ui-serif, ui-serif, 'Georgia', serif;
+    font-style: italic;
+    line-height: 1.3;
 }
+
 article blockquote p:last-child:after{
     content:none!important
 }
@@ -151,6 +154,14 @@ article .post__titulo{
     font-size:2.4rem;
     line-height:.9;
     margin-top:1rem
+}
+
+article ul {
+  margin-bottom: 1rem;
+}
+
+article ul li {
+  list-style: square inside;
 }
 article .descripcion{
     color:#747678;

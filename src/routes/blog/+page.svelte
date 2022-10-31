@@ -9,7 +9,7 @@
 
   let currentPage = Number($page.url.searchParams.get('page')) - 1;
   let totalPages = 1;
-  let postPerPage = 3;
+  let postPerPage = 10;
 
   let postList = [];
   let isLoading = false;
@@ -31,7 +31,7 @@
       })
       .then((res) => {
         postList = res[0];
-        totalPages = Number(res[1]) / postPerPage;
+        totalPages = Math.max(1, Number(res[1]) / postPerPage);
       })
       .catch((err) => {
         console.error(err);
@@ -76,15 +76,6 @@
           href={`/blog/${post.id}/${post.Slug}`}
           class="flex flex-col sm:flex-row mb-10 hover:scale-105 transition rounded-md"
         >
-          <div class="w-full md:w-1/3">
-            <img
-              alt="thumbnail"
-              class="inline-block h-full w-full md:rounded-md"
-              style="object-fit:cover"
-              src={`${API_ENDPOINT}${post.FeatureImage.formats.small.url}`}
-            />
-          </div>
-
           <div class="w-full md:w-3/4 p-8">
             <div class="mb-2">
               <p
@@ -96,9 +87,12 @@
               </p>
             </div>
             <div>
-              <h2 class="font-bold text-2xl md:text-3xl mb-6">
+              <h2 class="font-bold text-2xl md:text-3xl mb-3">
                 {post.Title}
               </h2>
+              <p class="mb-6">
+                {post.Description}
+              </p>
               <p class="text-xs text-dim-white">
                 {new Intl.DateTimeFormat(navigator.languages[0], {
                   dateStyle: 'long'
