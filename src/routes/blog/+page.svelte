@@ -2,6 +2,7 @@
   import Icon from '../../components/Home/Icons.svelte';
   import fail from '../../static/dayum.mp4';
   import { page } from '$app/stores';
+  import Companion from '../../components/Companion/Companion.svelte';
 
   const API_ENDPOINT = import.meta.env.VITE_BACKEND_URL;
 
@@ -51,9 +52,11 @@
 </script>
 
 <div class="flex flex-col container min-h-screen max-w-5xl m-auto pt-16 pb-16 lg:pt-16">
+  <Companion />
+
   <header>
-    <div class="text-center mb-20 px-4">
-      <Icon type="edit" gradientFrom="173, 182, 255" gradientTo="174, 109, 255" />
+    <div class="text-center mb-20 px-4 text-black">
+      <Icon size={8} type="edit" gradientFrom="173, 182, 255" gradientTo="174, 109, 255" />
       <h3 class="font-bold text-3xl mb-2 md:text-4xl">
         <span
           style="background:linear-gradient(122.25deg, #ADB6FF 12.16%, #AE6DFF 70.98%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;"
