@@ -1,4 +1,4 @@
-<script lang="ts">
+<script lang=ts>
   export let type = '';
   export let size = 8;
   export let gradientFrom = '';
@@ -67,6 +67,7 @@
       />
     </svg>
   {/if}
+
   {#if type === 'home'}
     <svg
       xmlns="http://www.w3.org/2000/svg"
