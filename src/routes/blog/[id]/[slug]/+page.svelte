@@ -2,6 +2,8 @@
   import SvelteMarkdown from 'svelte-markdown';
   import fail from '../../../../static/dayum.mp4';
   import Loader from '../../../../components/Loader/Loader.svelte';
+  import Companion from '../../../../components/Companion/Companion.svelte';
+
   const API_ENDPOINT = import.meta.env.VITE_BACKEND_URL;
   import { page } from '$app/stores';
   let isLoading = false;
@@ -33,6 +35,7 @@
   class="flex flex-col container min-h-screen max-w-6xl m-auto pt-16 pb-16 lg:pt-16
 text-white"
 >
+  <Companion />
   {#if isLoading}
     <Loader />
   {:else if fetchFail}
@@ -61,7 +64,7 @@ text-white"
           </h1>
         </div>
       </div>
-      <article class="flex flex-col container max-w-4xl m-auto mt-10 text-lg">
+      <article class="flex flex-col container max-w-4xl m-auto mt-10">
         <SvelteMarkdown source={post.Content} />
       </article>
     </div>
