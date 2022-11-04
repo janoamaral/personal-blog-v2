@@ -17,18 +17,21 @@
     class="bg-light-black/70 backdrop-blur-sm border border-light-black text-dim-white p-1
     transition-all rounded-l-lg m-0 shadow-sm"
   >
-    <li on:click={toggleCollapse} class="cursor-pointer text-light-blue">
+    <li
+      on:click={toggleCollapse}
+      class={`cursor-pointer text-light-blue ${$isCollapsed ? '-ml-3' : ''}`}
+    >
       {#if $isCollapsed}
         <Icon
           size={6}
-          type="expand"
+          type="chevron-left"
           gradientFrom="173, 182, 255, 0"
           gradientTo="174, 109, 255, 0"
         />
       {:else}
         <Icon
           size={6}
-          type="collapse"
+          type="chevron-right"
           gradientFrom="173, 182, 255, 0"
           gradientTo="174, 109, 255, 0"
         />
