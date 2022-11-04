@@ -23,7 +23,7 @@
 <div class="mb-8 pt-20 rounded-lg" id="stats-section">
   <div class="text-center pb-10 text-black">
     <Icon type="terminal" gradientFrom="0, 255, 72" gradientTo="0, 255, 72" />
-    <h3 class="font-bold text-3xl mb-2 md:text-4xl text-white">
+    <h3 class="font-bold text-3xl mb-2 mt-2 md:text-4xl text-white">
       Tech stack and
       <span
         style="background:linear-gradient(122.25deg, #00FF48 12.16%, #09D18B 70.98%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;"

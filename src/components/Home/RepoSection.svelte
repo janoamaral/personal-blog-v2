@@ -49,7 +49,7 @@
 <div class="mb-16 pt-20" id="repos-section">
   <div class="text-center pb-10 text-black">
     <Icon type="star" gradientFrom="255, 225, 76" gradientTo="255, 109, 46" />
-    <h3 class="font-bold text-3xl md:text-4xl mb-1 text-white">
+    <h3 class="font-bold text-3xl md:text-4xl mb-1 mt-2 text-white">
       My
       <span
         style="background:linear-gradient(122.25deg, #FFE14C 12.16%, #FF6D2E 70.98%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;"

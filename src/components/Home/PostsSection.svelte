@@ -34,7 +34,7 @@
 <div class="mb-16 pt-20" id="posts-section">
   <div class="text-center mb-20 text-black">
     <Icon type="edit" gradientFrom="173, 182, 255" gradientTo="174, 109, 255" />
-    <h3 class="font-bold text-3xl mb-2 mt-4 md:text-4xl text-white">
+    <h3 class="font-bold text-3xl mb-2 mt-2 md:text-4xl text-white">
       Checkout the latest
       <span
         style="background:linear-gradient(122.25deg, #ADB6FF 12.16%, #AE6DFF 70.98%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;"
