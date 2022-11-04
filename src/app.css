@@ -162,6 +162,11 @@ article ul {
 article ul li {
   list-style: square inside;
 }
+
+article ol li {
+  list-style: upper-roman;
+}
+
 article .descripcion{
     color:#747678;
     margin-bottom:2rem
