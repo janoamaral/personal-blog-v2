@@ -164,7 +164,7 @@ article ul li {
 }
 
 article ol li {
-  list-style: upper-roman;
+  list-style: upper-alpha;
 }
 
 article .descripcion{

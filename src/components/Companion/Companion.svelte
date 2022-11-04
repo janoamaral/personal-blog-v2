@@ -8,8 +8,10 @@
 </script>
 
 <div
-  class={`flex flex-row fixed z-50 transition-all ${$isCollapsed ? '-right-7' : 'right-0'}`}
-  style={`top:calc(35vh - ${$isCollapsed ? '0em' : '0em'})`}
+  class={`flex flex-row fixed z-50 transition-all ${
+    $isCollapsed ? '-right-7 opacity-50 hover:opacity-100' : 'right-0'
+  }`}
+  style={`top:calc(35vh - ${$isCollapsed ? '-2em' : '-2em'})`}
 >
   <ul
     class="bg-light-black/70 backdrop-blur-sm border border-light-black text-dim-white p-1

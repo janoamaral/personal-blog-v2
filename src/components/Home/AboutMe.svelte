@@ -26,7 +26,7 @@
 <div class="mb-8 text-md pt-2 rounded-lg" id="about-section">
   <div class="text-center mb-10 text-black">
     <Icon type="user" gradientFrom="76, 252, 255" gradientTo="76, 160, 255" />
-    <h3 class="font-bold text-3xl mb-2 md:text-4xl text-white">
+    <h3 class="font-bold text-3xl mb-2 mt-2 md:text-4xl text-white">
       Know me a
       <span
         style="background:linear-gradient(122.25deg, #4CFCFF 12.16%, #4C97FF 70.98%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;"
