@@ -44,7 +44,7 @@
   <p class="mb-8">
     But not everything in me is about job: I'm a minimalist at heart, open source lover and bad
     harmonica player. I enjoy cooking for my family and friends, being italian pastas my forte. Avid
-    <a class="text-light-blue underline" href="#">reader</a> and with a very ecletic taste in music:
+    <a class="text-light-blue underline" href="/blog/1/biblioteca">reader</a> and with a very ecletic taste in music:
     from classical music to K/J-Pop and everything in between. Nature conscious: I don't own a car and
     prefer walk / cycling, avoid plastics everytime I can.
   </p>
