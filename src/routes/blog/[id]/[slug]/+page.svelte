@@ -3,29 +3,57 @@
   import fail from '../../../../static/dayum.mp4';
   import Loader from '../../../../components/Loader/Loader.svelte';
   import Companion from '../../../../components/Companion/Companion.svelte';
+  import { liveQuery } from 'dexie';
+  import { db } from '../../../../stores/db.js';
+  import { browser } from '$app/environment';
 
   const API_ENDPOINT = import.meta.env.VITE_BACKEND_URL;
   import { page } from '$app/stores';
   let isLoading = false;
   let fetchFail = false;
 
-  export function load(e) {
+  export async function load(e) {
     isLoading = true;
+
+    if (browser) {
+      const res = browser ? await db.posts.get({ id: parseInt($page.params.id) }) : [];
+
+      if (res) {
+        isLoading = false;
+        post = res;
+      } else {
+        await loadPosts();
+      }
+    } else {
+      await loadPosts();
+    }
+  }
+
+  async function loadPosts() {
     Promise.allSettled([fetch(`${API_ENDPOINT}/posts/${$page.params.id}`)])
       .then(async ([rawPost]) => {
         const resPost = rawPost.value;
         return [await resPost.json()];
       })
-      .then((res) => {
+      .then(async (res) => {
+        await addPosts(res[0]);
+        isLoading = false;
         post = res[0];
+        return res[0];
       })
       .catch((err) => {
         console.error(err);
         fetchFail = true;
-      })
-      .finally(() => {
-        isLoading = false;
+        return {};
       });
+  }
+
+  async function addPosts(post) {
+    try {
+      await db.posts.put(post);
+    } catch (err) {
+      console.error('Fail to save local posts', err.stack);
+    }
   }
 
   let post = load();

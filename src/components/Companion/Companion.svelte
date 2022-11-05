@@ -15,32 +15,44 @@
 >
   <ul
     class="bg-light-black/70 backdrop-blur-sm border border-light-black text-dim-white p-1
-    transition-all rounded-l-lg m-0 shadow-sm"
+    transition-all rounded-l-lg m-0 shadow-sm space-y-2 py-3"
+    style="line-height:0"
   >
-    <li on:click={toggleCollapse} class="cursor-pointer text-light-blue">
+    <li
+      on:click={toggleCollapse}
+      class={`cursor-pointer text-light-blue ${$isCollapsed ? '-ml-2' : ''}`}
+    >
       {#if $isCollapsed}
-        <Icon
-          size={6}
-          type="expand"
-          gradientFrom="173, 182, 255, 0"
-          gradientTo="174, 109, 255, 0"
-        />
+        <div class="-translate-x-2">
+          <Icon
+            size={6}
+            type="chevron-left"
+            gradientFrom="173, 182, 255, 0"
+            gradientTo="174, 109, 255, 0"
+          />
+        </div>
       {:else}
-        <Icon
-          size={6}
-          type="collapse"
-          gradientFrom="173, 182, 255, 0"
-          gradientTo="174, 109, 255, 0"
-        />
+        <div class="-translate-x-0">
+          <Icon
+            size={6}
+            type="chevron-right"
+            gradientFrom="173, 182, 255, 0"
+            gradientTo="174, 109, 255, 0"
+          />
+        </div>
       {/if}
     </li>
-    <li class={`${$isCollapsed ? 'h-0 overflow-hidden' : 'h-auto'}`}>
-      <a href="/" class="hover:text-white">
+    <li class={`${$isCollapsed ? 'hidden' : 'block'}`}>
+      <a href="/" class="inline-block rounded-xl hover:text-accent-blue hover:bg-accent-blue/20">
         <Icon size={6} type="home" gradientFrom="173, 182, 255, 0" gradientTo="174, 109, 255, 0" />
       </a>
     </li>
-    <li class={`${$isCollapsed ? 'h-0 overflow-hidden' : 'h-auto'}`}>
-      <a href="/blog?page=1" class="hover:text-white">
+    <li class={`${$isCollapsed ? 'hidden' : 'block'}`}>
+      <a
+        href="/blog?page=1"
+        class="inline-block rounded-xl hover:text-accent-violet
+      hover:bg-accent-violet/20 pb-0"
+      >
         <Icon size={6} type="edit" gradientFrom="173, 182, 255, 0" gradientTo="174, 109, 255, 0" />
       </a>
     </li>

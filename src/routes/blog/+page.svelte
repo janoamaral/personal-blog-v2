@@ -3,6 +3,7 @@
   import fail from '../../static/dayum.mp4';
   import { page } from '$app/stores';
   import Companion from '../../components/Companion/Companion.svelte';
+  import { db } from '../../stores/db.js';
 
   const API_ENDPOINT = import.meta.env.VITE_BACKEND_URL;
 
@@ -30,8 +31,9 @@
         const resPostsCount = rawPostCount.value;
         return [await resPosts.json(), await resPostsCount.json()];
       })
-      .then((res) => {
+      .then(async (res) => {
         postList = res[0];
+        await addPosts(res[0]);
         totalPages = Math.max(1, Number(res[1]) / postPerPage);
       })
       .catch((err) => {
@@ -49,6 +51,14 @@
   };
 
   $: LoadPosts();
+
+  async function addPosts(posts) {
+    try {
+      await db.posts.bulkPut(posts);
+    } catch (err) {
+      console.error('Fail to save local posts', err.stack);
+    }
+  }
 </script>
 
 <div class="flex flex-col container min-h-screen max-w-5xl m-auto pt-16 pb-16 lg:pt-16">
