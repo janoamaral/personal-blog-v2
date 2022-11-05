@@ -4,6 +4,8 @@
   import Icon from './Icons.svelte';
   import fail from '../../static/dayum.mp4';
 
+  import { db } from '../../stores/db.js';
+
   const API_ENDPOINT = import.meta.env.VITE_BACKEND_URL;
 
   let postList = [];
@@ -12,15 +14,15 @@
 
   onMount(async () => {
     isLoading = true;
-    //data = await fetch('https://api.github.com/users/janoamaral/repos').then((x) => x.json());
 
     Promise.allSettled([fetch(`${API_ENDPOINT}/posts?_limit=6&_sort=PublishDate:DESC`)])
       .then(async ([resPosts]) => {
         const resPostsResponse = resPosts.value;
         return [await resPostsResponse.json()];
       })
-      .then((res) => {
+      .then(async (res) => {
         postList = res[0].slice(0, 6);
+        await addPosts(postList);
         isLoading = false;
       })
       .catch((err) => {
@@ -29,6 +31,14 @@
         isLoading = false;
       });
   });
+
+  async function addPosts(posts) {
+    try {
+      await db.posts.bulkPut(posts);
+    } catch (err) {
+      console.error('Fail to save local posts', err.stack);
+    }
+  }
 </script>
 
 <div class="mb-16 pt-20" id="posts-section">
