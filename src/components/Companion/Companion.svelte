@@ -20,6 +20,7 @@
   >
     <li
       on:click={toggleCollapse}
+      aria-label="Toggle collapse menu"
       class={`cursor-pointer text-light-blue ${$isCollapsed ? '-ml-2' : ''}`}
     >
       {#if $isCollapsed}
@@ -43,13 +44,18 @@
       {/if}
     </li>
     <li class={`${$isCollapsed ? 'hidden' : 'block'}`}>
-      <a href="/" class="inline-block rounded-xl hover:text-accent-blue hover:bg-accent-blue/20">
+      <a
+        href="/"
+        class="inline-block rounded-xl hover:text-accent-blue hover:bg-accent-blue/20"
+        aria-label="Home"
+      >
         <Icon size={6} type="home" gradientFrom="173, 182, 255, 0" gradientTo="174, 109, 255, 0" />
       </a>
     </li>
     <li class={`${$isCollapsed ? 'hidden' : 'block'}`}>
       <a
         href="/blog?page=1"
+        aria-label="Blog"
         class="inline-block rounded-xl hover:text-accent-violet
       hover:bg-accent-violet/20 pb-0"
       >

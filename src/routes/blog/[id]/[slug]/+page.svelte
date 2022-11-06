@@ -59,6 +59,16 @@
   let post = load();
 </script>
 
+<svelte:head>
+  <title>{`${post.Title} - Blog - Jano Amaral`}</title>
+  <meta name="description" content={post.Description} />
+  <meta property="og:title" content={`${post.Title} - Blog - Jano Amaral`} />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content={`https://jano.amara.ar/blog/${post.id}/${post.Slug}`} />
+  <meta property="og:image" content={`https://api.jano.amara.ar${post.FeatureImage?.url}`} />
+  <meta name="twitter:card" content={`https://api.jano.amara.ar${post.FeatureImage?.url}`} />
+</svelte:head>
+
 <div
   class="flex flex-col container min-h-screen max-w-6xl m-auto pt-16 pb-16 lg:pt-16
 text-white"

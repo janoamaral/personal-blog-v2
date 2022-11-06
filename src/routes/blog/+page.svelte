@@ -61,6 +61,16 @@
   }
 </script>
 
+<svelte:head>
+  <title>Blog - Jano Amaral</title>
+  <meta
+    name="description"
+    content="
+    Noticias, guias, opiniones, tutoriales y lo que se cruce. Lo importante es poder compartir.
+    "
+  />
+</svelte:head>
+
 <div class="flex flex-col container min-h-screen max-w-5xl m-auto pt-16 pb-16 lg:pt-16">
   <Companion />
 
