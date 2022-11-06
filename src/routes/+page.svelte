@@ -77,6 +77,17 @@
   });
 </script>
 
+<svelte:head>
+  <title>Jano Amaral - Freelance Systems Analyst</title>
+  <meta
+    name="description"
+    content="
+    An all rounder. From backend to frontend, sysadmin to customer service. In love with web
+    performance. Never stop learning.
+    "
+  />
+</svelte:head>
+
 <div class="flex flex-col md:flex-row container m-auto lg:pt-16">
   <header
     class="p-4 md:w-1/3 md:fixed relative h-screen md:h-full flex place-items-center
