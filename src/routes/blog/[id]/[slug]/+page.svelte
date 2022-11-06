@@ -6,6 +6,8 @@
   import { db } from '../../../../stores/db.js';
   import { browser } from '$app/environment';
 
+  import SkeletonArticle from '../../../../components/Skeleton/Skeleton-Article.svelte';
+
   const API_ENDPOINT = import.meta.env.VITE_BACKEND_URL;
   import { page } from '$app/stores';
 
@@ -75,7 +77,7 @@ text-white"
 >
   <Companion />
   {#if isLoading}
-    <Loader />
+    <SkeletonArticle />
   {:else if fetchFail}
     <p class="text-gray text-sm mb-6 text-center">⚠️ Something went wrong while loading this...</p>
     <video autoplay loop muted><source src={fail} type="video/mp4" /></video>
