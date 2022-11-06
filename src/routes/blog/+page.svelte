@@ -5,6 +5,8 @@
   import Companion from '../../components/Companion/Companion.svelte';
   import { db } from '../../stores/db.js';
 
+  import SkeletonPostCard from '../../components/Skeleton/Skeleton-Post-Card.svelte';
+
   const API_ENDPOINT = import.meta.env.VITE_BACKEND_URL;
 
   let fetchFail = false;
@@ -89,7 +91,12 @@
       </p>
     </div>
   </header>
-  {#if fetchFail}
+  {#if isLoading}
+    <SkeletonPostCard />
+    <SkeletonPostCard />
+    <SkeletonPostCard />
+    <SkeletonPostCard />
+  {:else if fetchFail}
     <p class="text-gray text-sm mb-6 text-center">⚠️ Something went wrong while loading this...</p>
     <video autoplay loop muted><source src={fail} type="video/mp4" /></video>
   {:else}

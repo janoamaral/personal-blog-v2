@@ -20,7 +20,7 @@
       const res = await db.posts.get({ id: parseInt($page.params.id) });
 
       if (res) {
-        isLoading = true;
+        isLoading = false;
         post = res;
       } else {
         await loadPosts();
