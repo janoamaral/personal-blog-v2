@@ -1,7 +1,6 @@
 <script>
   import SvelteMarkdown from 'svelte-markdown';
   import fail from '../../../../static/dayum.mp4';
-  import Loader from '../../../../components/Loader/Loader.svelte';
   import Companion from '../../../../components/Companion/Companion.svelte';
   import { db } from '../../../../stores/db.js';
   import { browser } from '$app/environment';
@@ -21,7 +20,7 @@
       const res = await db.posts.get({ id: parseInt($page.params.id) });
 
       if (res) {
-        isLoading = false;
+        isLoading = true;
         post = res;
       } else {
         await loadPosts();
