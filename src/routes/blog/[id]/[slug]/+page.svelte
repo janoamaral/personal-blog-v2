@@ -1,4 +1,6 @@
 <script>
+  export const prerender = true;
+
   import SvelteMarkdown from 'svelte-markdown';
   import fail from '../../../../static/dayum.mp4';
   import Companion from '../../../../components/Companion/Companion.svelte';
