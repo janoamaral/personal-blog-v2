@@ -1,14 +1,15 @@
 <script>
   import SvelteMarkdown from 'svelte-markdown';
   import fail from '../../../../static/dayum.mp4';
-  import Loader from '../../../../components/Loader/Loader.svelte';
   import Companion from '../../../../components/Companion/Companion.svelte';
-  import { liveQuery } from 'dexie';
   import { db } from '../../../../stores/db.js';
   import { browser } from '$app/environment';
 
+  import SkeletonArticle from '../../../../components/Skeleton/Skeleton-Article.svelte';
+
   const API_ENDPOINT = import.meta.env.VITE_BACKEND_URL;
   import { page } from '$app/stores';
+
   let isLoading = false;
   let fetchFail = false;
 
@@ -16,7 +17,7 @@
     isLoading = true;
 
     if (browser) {
-      const res = browser ? await db.posts.get({ id: parseInt($page.params.id) }) : [];
+      const res = await db.posts.get({ id: parseInt($page.params.id) });
 
       if (res) {
         isLoading = false;
@@ -36,9 +37,9 @@
         return [await resPost.json()];
       })
       .then(async (res) => {
-        await addPosts(res[0]);
-        isLoading = false;
         post = res[0];
+        isLoading = false;
+        await addPosts(res[0]);
         return res[0];
       })
       .catch((err) => {
@@ -75,7 +76,7 @@ text-white"
 >
   <Companion />
   {#if isLoading}
-    <Loader />
+    <SkeletonArticle />
   {:else if fetchFail}
     <p class="text-gray text-sm mb-6 text-center">⚠️ Something went wrong while loading this...</p>
     <video autoplay loop muted><source src={fail} type="video/mp4" /></video>

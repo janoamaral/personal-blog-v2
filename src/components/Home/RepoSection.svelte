@@ -62,6 +62,7 @@
       <br />If you want to see this site code you can do it
       <a
         href="https://github.com/janoamaral/personal-blog-v2"
+        aria-label="this site code"
         class="text-light-blue underline"
         target="_BLANK">here</a
       >.
