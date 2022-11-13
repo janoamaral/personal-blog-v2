@@ -14,6 +14,7 @@
   export let data;
 
   let post = data.get.post;
+  fetchFail = !data.get.ok;
 </script>
 
 <svelte:head>
