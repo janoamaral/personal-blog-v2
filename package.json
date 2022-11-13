@@ -35,6 +35,9 @@
 	"dependencies": {
 		"@sveltejs/adapter-node": "^1.0.0-next.98",
 		"dexie": "^3.2.2",
-		"svelte-markdown": "^0.2.3"
+		"match-sorter": "^6.3.1",
+		"svelte-command-palette": "^1.2.1",
+		"svelte-markdown": "^0.2.3",
+		"svelte-spotlight": "^1.0.12"
 	}
 }
