@@ -13,7 +13,8 @@ module.exports = {
       'black': '#1a1b26',
       'light-black': '#24283b',
       'accent-blue': '#4CA0FF',
-      'accent-violet': '#AE6DFF'
+      'accent-violet': '#AE6DFF',
+      'accent-green': '#09D18B'
     },
     extend: {
       colors: {

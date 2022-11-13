@@ -4,62 +4,16 @@
   import SvelteMarkdown from 'svelte-markdown';
   import fail from '../../../../static/dayum.mp4';
   import Companion from '../../../../components/Companion/Companion.svelte';
-  import { db } from '../../../../stores/db.js';
-  import { browser } from '$app/environment';
 
   import SkeletonArticle from '../../../../components/Skeleton/Skeleton-Article.svelte';
-
-  const API_ENDPOINT = import.meta.env.VITE_BACKEND_URL;
-  import { page } from '$app/stores';
 
   let isLoading = false;
   let fetchFail = false;
 
-  export async function load(e) {
-    isLoading = true;
+  /** @type {import('./$types').PageData} */
+  export let data;
 
-    if (browser) {
-      const res = await db.posts.get({ id: parseInt($page.params.id) });
-
-      if (res) {
-        isLoading = false;
-        post = res;
-      } else {
-        await loadPosts();
-      }
-    } else {
-      await loadPosts();
-    }
-  }
-
-  async function loadPosts() {
-    Promise.allSettled([fetch(`${API_ENDPOINT}/posts/${$page.params.id}`)])
-      .then(async ([rawPost]) => {
-        const resPost = rawPost.value;
-        return [await resPost.json()];
-      })
-      .then(async (res) => {
-        post = res[0];
-        isLoading = false;
-        await addPosts(res[0]);
-        return res[0];
-      })
-      .catch((err) => {
-        console.error(err);
-        fetchFail = true;
-        return {};
-      });
-  }
-
-  async function addPosts(post) {
-    try {
-      await db.posts.put(post);
-    } catch (err) {
-      console.error('Fail to save local posts', err.stack);
-    }
-  }
-
-  let post = load();
+  let post = data.get.post;
 </script>
 
 <svelte:head>
@@ -94,7 +48,7 @@ text-white"
             {post.category.Name || 'Other'}
           </p>
           <p class="text-sm text-dim-white mb-4">
-            {new Intl.DateTimeFormat(navigator.languages[0], {
+            {new Intl.DateTimeFormat('en-US', {
               dateStyle: 'long'
             }).format(new Date(post.PublishDate))}
           </p>
