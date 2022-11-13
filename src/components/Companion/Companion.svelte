@@ -62,7 +62,7 @@
         <Icon size={6} type="edit" gradientFrom="173, 182, 255, 0" gradientTo="174, 109, 255, 0" />
       </a>
     </li>
-    <li class={`${$isCollapsed ? 'hidden' : 'block'}`}>
+    <li class={`${$isCollapsed ? 'hidden' : 'hidden'}`}>
       <div
         aria-label="Share"
         class="inline-block rounded-xl hover:text-accent-green
