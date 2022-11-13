@@ -22,9 +22,9 @@
   <meta name="description" content={post.Description} />
   <meta property="og:title" content={`${post.Title} - Blog - Jano Amaral`} />
   <meta property="og:type" content="article" />
-  <meta property="og:url" content={`https://jano.amara.ar/blog/${post.id}/${post.Slug}`} />
-  <meta property="og:image" content={`https://api.jano.amara.ar${post.FeatureImage?.url}`} />
-  <meta name="twitter:card" content={`https://api.jano.amara.ar${post.FeatureImage?.url}`} />
+  <meta property="og:url" content={`https://jano.amaral.ar/blog/${post.id}/${post.Slug}`} />
+  <meta property="og:image" content={`https://api.amaral.ar${post.FeatureImage?.url}`} />
+  <meta name="twitter:card" content={`https://api.amaral.ar${post.FeatureImage?.url}`} />
 </svelte:head>
 
 <div
