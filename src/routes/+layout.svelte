@@ -8,21 +8,13 @@
 
   let items = [
     {
-      title: 'Hit 1',
-      description: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. '
+      title: 'Home',
+      description: 'Ir al home'
     },
     {
-      title: 'Hit 2',
-      description: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. '
+      title: 'Blog',
+      description: 'Ir a la página principal del blog'
     },
-    {
-      title: 'Hit 3',
-      description: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. '
-    },
-    {
-      title: 'Hit 4',
-      description: 'Lorem ipsum dolor sit, amet consectetur adipisicing ale. '
-    }
   ];
   $: results = matchSorter(items, query, { keys: ['title', 'description'] });
 </script>
@@ -41,9 +33,10 @@
 <SvelteSpotlight
   {results}
   bind:query
-  modalClass={'w-[600px] max-w-[95%] bg-black shadow-lg rounded-sm'}
+  modalClass={'w-[600px] max-w-[95%] bg-black shadow-lg rounded-sm p-4'}
   headerClass={'py-3 px-10 border-b-2 border-slate-100 border-b-solid'}
   inputClass="focus:outline-none bg-black text-white"
+  contentClass='text-white font-bold pt-4 pb-0'
   resultIdKey="title"
   cleanQueryOnClose={true}
   on:select={(event) => {
@@ -59,8 +52,8 @@
       : ''}
   >
     {result.title}
-    <p class="text-white text-sm">{result.description}</p>
+    <p class="mb-4 text-dim-white text-sm font-normal">{result.description}</p>
   </div>
 
-  <div slot="noResults" class="px-10 py-3 text-white text-sm">No results...</div>
+  <div slot="noResults" class="px-10 py-3 text-white text-center text-sm">No results...</div>
 </SvelteSpotlight>
