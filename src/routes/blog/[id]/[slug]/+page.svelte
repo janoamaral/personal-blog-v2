@@ -18,13 +18,24 @@
 </script>
 
 <svelte:head>
+  <!-- Primary Meta Tags -->
   <title>{`${post.Title} - Blog - Jano Amaral`}</title>
+  <meta name="title" content={`${post.Title} - Blog - Jano Amaral`} />
   <meta name="description" content={post.Description} />
-  <meta property="og:title" content={`${post.Title} - Blog - Jano Amaral`} />
-  <meta property="og:type" content="article" />
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website" />
   <meta property="og:url" content={`https://jano.amaral.ar/blog/${post.id}/${post.Slug}`} />
+  <meta property="og:title" content={`${post.Title} - Blog - Jano Amaral`} />
+  <meta property="og:description" content={post.Description} />
   <meta property="og:image" content={`https://api.amaral.ar${post.FeatureImage?.url}`} />
-  <meta name="twitter:card" content={`https://api.amaral.ar${post.FeatureImage?.url}`} />
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image" />
+  <meta property="twitter:url" content={`https://jano.amaral.ar/blog/${post.id}/${post.Slug}`} />
+  <meta property="twitter:title" content={`${post.Title} - Blog - Jano Amaral`} />
+  <meta property="twitter:description" content={post.Description} />
+  <meta property="twitter:image" content={`https://api.amaral.ar${post.FeatureImage?.url}`} />
 </svelte:head>
 
 <div
