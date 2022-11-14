@@ -117,7 +117,8 @@
     <div class="mt-8">
       <div
         on:click={openSpotlight}
-        class="cursor-pointer inline-block w-auto font-mono bg-light-black px-4 py-1 rounded-md text-sm"
+        class="text-accent-green cursor-pointer w-auto font-mono font-bold
+        bg-light-black px-4 py-1 rounded-md text-sm hidden md:inline-block"
       >
         Ctrl+K to search
       </div>
