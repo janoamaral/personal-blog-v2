@@ -4,7 +4,14 @@
   import CodeStats from '../components/Home/CodeStats.svelte';
   import Posts from '../components/Home/PostsSection.svelte';
 
+  import { isSpotlightOpen } from '../stores/common';
+
   import { onMount } from 'svelte';
+
+  function openSpotlight() {
+    $isSpotlightOpen = false;
+    $isSpotlightOpen = true;
+  }
 
   const createObserver = (elemento) => {
     let observer;
@@ -107,6 +114,15 @@
         href="https://kit.svelte.dev">Taggify</a
       >.
     </p>
+    <div class="mt-8">
+      <div
+        on:click={openSpotlight}
+        class="text-accent-green cursor-pointer w-auto font-mono font-bold
+        bg-light-black px-4 py-1 rounded-md text-sm hidden md:inline-block"
+      >
+        Ctrl+K to search
+      </div>
+    </div>
     <ul
       class="font-mono font-bold tracking-wide text-xs uppercase mt-16
     md-menu hidden lg:block"

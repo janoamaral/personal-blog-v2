@@ -1,9 +1,14 @@
 <script>
   import Icon from '../Home/Icons.svelte';
-  import { isCollapsed } from '../../stores/common.js';
+  import { isCollapsed, isSpotlightOpen } from '../../stores/common.js';
 
   function toggleCollapse() {
     $isCollapsed = !$isCollapsed;
+  }
+
+  function openSpotlight() {
+    $isSpotlightOpen = false;
+    $isSpotlightOpen = true;
   }
 </script>
 
@@ -62,11 +67,20 @@
         <Icon size={6} type="edit" gradientFrom="173, 182, 255, 0" gradientTo="174, 109, 255, 0" />
       </a>
     </li>
+    <li class={`${$isCollapsed ? 'hidden' : 'block'}`} on:click={openSpotlight}>
+      <div
+        aria-label="Share"
+        class="inline-block rounded-xl hover:text-accent-green
+      hover:bg-accent-green/20 pb-0 cursor-pointer"
+      >
+        <Icon size={6} type="search" gradientFrom="0, 255, 72, 0" gradientTo="0, 255, 72, 0" />
+      </div>
+    </li>
     <li class={`${$isCollapsed ? 'hidden' : 'hidden'}`}>
       <div
         aria-label="Share"
         class="inline-block rounded-xl hover:text-accent-green
-      hover:bg-accent-green/20 pb-0"
+      hover:bg-accent-green/20 pb-0 cursor-pointer"
       >
         <Icon size={6} type="share" gradientFrom="0, 255, 72, 0" gradientTo="0, 255, 72, 0" />
       </div>
