@@ -23,7 +23,7 @@
     {
       title: 'Blog',
       description: 'Ir a la página principal del blog',
-      url: '/blog'
+      url: '/blog?page=1'
     }
   ];
 

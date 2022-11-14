@@ -166,17 +166,20 @@
   {#if type === 'search'}
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      fill="none"
+      class="icon icon-tabler icon-tabler-input-search"
+      width="24"
+      height="24"
       viewBox="0 0 24 24"
-      stroke-width="2.5"
+      stroke-width="2"
       stroke="currentColor"
-      class="w-6 h-6"
+      fill="none"
+      stroke-linecap="round"
+      stroke-linejoin="round"
     >
-      <path
-        stroke-linecap="round"
-        stroke-linejoin="round"
-        d="M3.75 12h16.5m-16.5 3.75h16.5M3.75 19.5h16.5M5.625 4.5h12.75a1.875 1.875 0 010 3.75H5.625a1.875 1.875 0 010-3.75z"
-      />
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M19 11v-3a2 2 0 0 0 -2 -2h-12a2 2 0 0 0 -2 2v5a2 2 0 0 0 2 2h5" />
+      <circle cx="15.5" cy="15.5" r="2.5" />
+      <path d="M17.5 17.5l2.5 2.5" />
     </svg>
   {/if}
 </div>
