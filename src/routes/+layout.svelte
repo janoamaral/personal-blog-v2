@@ -44,7 +44,7 @@
   $: results = matchSorter(items, query, { keys: ['title', 'description'] }).slice(0, 5);
 </script>
 
-<div class="text-white font-sans" style="background:url(repeated-square-dark.webp) fixed #171718">
+<div class="text-white font-sans bg-black">
   <slot />
   <div
     class="fixed top-0 left-0 z-20 w-full h-24 pointer-events-none

@@ -85,14 +85,36 @@
 </script>
 
 <svelte:head>
+  <!-- Primary Meta Tags -->
   <title>Jano Amaral - Freelance Systems Analyst</title>
+  <meta name="title" content="Jano Amaral - Freelance Systems Analyst" />
   <meta
     name="description"
-    content="
-    An all rounder. From backend to frontend, sysadmin to customer service. In love with web
-    performance. Never stop learning.
-    "
+    content="An all rounder. From backend to frontend, sysadmin to customer service. In love with web
+    performance. Never stop learning."
   />
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content={`https://jano.amaral.ar/`} />
+  <meta property="og:title" content="Jano Amaral - Freelance Systems Analyst" />
+  <meta
+    property="og:description"
+    content="An all rounder. From backend to frontend, sysadmin to customer service. In love with web
+    performance. Never stop learning."
+  />
+  <meta property="og:image" content="https://jano.amaral.ar/social.png" />
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image" />
+  <meta property="twitter:url" content={`https://jano.amaral.ar/`} />
+  <meta property="twitter:title" content="Jano Amaral - Freelance Systems Analyst" />
+  <meta
+    property="twitter:description"
+    content="An all rounder. From backend to frontend, sysadmin to customer service. In love with web
+    performance. Never stop learning."
+  />
+  <meta property="twitter:image" content="https://jano.amaral.ar/social.png" />
 </svelte:head>
 
 <div class="flex flex-col md:flex-row container m-auto lg:pt-16">
@@ -105,7 +127,7 @@
       <span
         style="background:linear-gradient(122.25deg, #ff4c88 12.16%, #ff8a63 70.98%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;"
         >Alejandro Amaral</span
-      ><span class="opacity-70">, freelance systems analyst.</span>
+      ><span>, freelance systems analyst.</span>
     </h1>
     <p class="text-gray mt-10 hidden">
       An all rounder. From backend to frontend, sysadmin to customer service. In love with web
