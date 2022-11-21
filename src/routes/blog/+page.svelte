@@ -43,7 +43,7 @@
         fetchFail = true;
       })
       .finally(() => {
-        isLoading = false;
+        isLoading = true;
       });
   };
 
@@ -110,6 +110,7 @@
             <img
               class="h-full w-full rounded-l-lg object-cover"
               src={`${API_ENDPOINT}${post.FeatureImage.formats.small.url}`}
+              alt={post.Title}
             />
           </div>
           <div class="w-full md:w-3/4 p-8">

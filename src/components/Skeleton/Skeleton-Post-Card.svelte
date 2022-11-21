@@ -1,4 +1,9 @@
-<div class="mt-2 flex flex-col sm:flex-row mb-10 hover:scale-105 transition rounded-md animate-pulse">
+<div
+  class="mt-2 flex flex-col sm:flex-row mb-10 transition rounded-md animate-pulse"
+>
+  <div class="md:w-1/3">
+    <div class="block bg-dim-white h-full w-full rounded-l-lg object-cover" />
+  </div>
   <div class="w-full md:w-3/4 p-8">
     <div class="mb-2 text-xs">
       <p class="mb-4">
