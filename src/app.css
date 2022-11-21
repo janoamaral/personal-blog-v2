@@ -107,6 +107,15 @@ article  code{
     background-color:#444;
     padding:0 5px
 }
+
+article p code {
+  border-radius: 6px;
+  font-size: 85%;
+  padding: 0.2em 0.4em;
+  background:#363636;
+  color:#FAFAFA;
+}
+
 article pre{
     font-family: monospace;
     position:relative;

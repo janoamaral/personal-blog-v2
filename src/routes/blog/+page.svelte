@@ -106,6 +106,12 @@
           href={`/blog/${post.id}/${post.Slug}`}
           class="flex flex-col sm:flex-row mb-10 hover:scale-105 transition rounded-md"
         >
+          <div class="md:w-1/3">
+            <img
+              class="h-full w-full rounded-l-lg object-cover"
+              src={`${API_ENDPOINT}${post.FeatureImage.formats.small.url}`}
+            />
+          </div>
           <div class="w-full md:w-3/4 p-8">
             <div class="mb-2">
               <p
