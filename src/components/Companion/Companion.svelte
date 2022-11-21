@@ -12,7 +12,7 @@
   }
 </script>
 
-<div
+<toolbar
   class={`flex flex-row fixed z-50 transition-all ${
     $isCollapsed ? '-right-7 opacity-50 hover:opacity-100' : 'right-0'
   }`}
@@ -29,23 +29,23 @@
       class={`cursor-pointer text-light-blue ${$isCollapsed ? '-ml-2' : ''}`}
     >
       {#if $isCollapsed}
-        <div class="-translate-x-2">
+        <button class="-translate-x-2" aria-label="Colapsar toolbar">
           <Icon
             size={6}
             type="chevron-left"
             gradientFrom="173, 182, 255, 0"
             gradientTo="174, 109, 255, 0"
           />
-        </div>
+        </button>
       {:else}
-        <div class="-translate-x-0">
+        <button class="-translate-x-0" aria-label="Expandir toolbar">
           <Icon
             size={6}
             type="chevron-right"
             gradientFrom="173, 182, 255, 0"
             gradientTo="174, 109, 255, 0"
           />
-        </div>
+        </button>
       {/if}
     </li>
     <li class={`${$isCollapsed ? 'hidden' : 'block'}`}>
@@ -68,17 +68,17 @@
       </a>
     </li>
     <li class={`${$isCollapsed ? 'hidden' : 'block'}`} on:click={openSpotlight}>
-      <div
-        aria-label="Share"
+      <button
+        aria-label="Abrir buscador"
         class="inline-block rounded-xl hover:text-accent-green
       hover:bg-accent-green/20 pb-0 cursor-pointer"
       >
         <Icon size={6} type="search" gradientFrom="0, 255, 72, 0" gradientTo="0, 255, 72, 0" />
-      </div>
+      </button>
     </li>
     <li class={`${$isCollapsed ? 'hidden' : 'hidden'}`}>
       <div
-        aria-label="Share"
+        aria-label="Compartir"
         class="inline-block rounded-xl hover:text-accent-green
       hover:bg-accent-green/20 pb-0 cursor-pointer"
       >
@@ -86,4 +86,4 @@
       </div>
     </li>
   </ul>
-</div>
+</toolbar>
