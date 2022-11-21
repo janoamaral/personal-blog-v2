@@ -43,7 +43,7 @@
         fetchFail = true;
       })
       .finally(() => {
-        isLoading = true;
+        isLoading = false;
       });
   };
 
