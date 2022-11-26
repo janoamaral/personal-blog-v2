@@ -48,7 +48,7 @@
     taste in music: from classical music to K/J-Pop and everything in between. Nature conscious: I don't
     own a car and prefer walk / cycling, avoid plastics everytime I can.
   </p>
-  <h4 class="font-bold text-2xl mb-2 md:text-2xl">Random fact about me.</h4>
+  <h3 class="font-bold text-2xl mb-2 md:text-2xl">Random fact about me.</h3>
   {#if fetchFail}
     <p class="text-gray text-sm mb-6 text-center">⚠️ Something went wrong while loading this...</p>
   {:else}
