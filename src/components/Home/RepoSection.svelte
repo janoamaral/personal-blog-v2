@@ -59,12 +59,12 @@
     </h3>
     <p class="text-gray text-sm mb-12">
       This are some of my most popular open source projects on GitHub.
-      <br />If you want to see this site code you can do it
+      <br />You can also see 
       <a
         href="https://github.com/janoamaral/personal-blog-v2"
         aria-label="this site code"
         class="text-light-blue underline"
-        target="_BLANK">here</a
+        target="_BLANK">this site repo</a
       >.
     </p>
   </div>
