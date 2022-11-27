@@ -71,6 +71,10 @@
     Noticias, guias, opiniones, tutoriales y lo que se cruce. Lo importante es poder compartir.
     "
   />
+
+  {#each postList as post}
+    <link rel="prefetch" href={`/blog/${post.id}/${post.Slug}`} />
+  {/each}
 </svelte:head>
 
 <div class="flex flex-col container min-h-screen max-w-5xl m-auto pt-16 pb-16 lg:pt-16">
