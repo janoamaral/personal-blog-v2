@@ -203,7 +203,7 @@
       </li>
     </ul>
 
-    <ul class="flex place-items-center text-left space-x-12 absolute left-0 bottom-24 md:bottom-36">
+    <ul class="flex place-items-center text-left space-x-12 absolute left-4 bottom-24 md:bottom-36 social-list">
       <li class="hidden md:inline-block">
         <img
           class="rounded-full w-14 h-14 hidden md:inline-block"
