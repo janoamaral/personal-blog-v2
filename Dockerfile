@@ -1,5 +1,5 @@
 # Our Node base image
-FROM node:16-alpine as development
+FROM node:18-alpine as development
 
 # Set the Node environment to development to ensure all packages are installed
 ENV NODE_ENV development
@@ -23,7 +23,7 @@ EXPOSE 24678
 CMD ["npm", "run", "dev", "--host", "0.0.0.0"]
 
 # stage build
-FROM node:16-alpine as build
+FROM node:18-alpine as build
 ENV VITE_BACKEND_URL https://api.amaral.ar
 WORKDIR /app
 COPY . .
