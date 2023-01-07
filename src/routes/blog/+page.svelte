@@ -105,17 +105,25 @@
     <video autoplay loop muted><source src={fail} type="video/mp4" /></video>
   {:else}
     <div>
-      {#each postList as post}
+      {#each postList as post, i}
         <a
           href={`/blog/${post.id}/${post.Slug}`}
-          class="flex flex-col sm:flex-row mb-10 hover:scale-105 transition rounded-md"
+          class="flex flex-col sm:flex-row mb-10 hover:scale-105 transition"
         >
-          <div class="md:w-1/3">
+          <div class="md:w-1/3 md:rounded-l-lg overflow-hidden h-56">
             <img
-              class="h-full w-full rounded-l-lg object-cover"
+              class={`h-full w-full object-cover img-thumb-${i} block
+              relative blur-lg`}
+              src={`${API_ENDPOINT}${post.FeatureImage.formats.thumbnail.url}`}
+              alt={post.Title}
+            />
+            <img
+              class={`h-full w-full object-cover img-post-${i} block relative`}
               src={`${API_ENDPOINT}${post.FeatureImage.formats.small.url}`}
               alt={post.Title}
-              loading="lazy"
+              on:load={(el) => {
+                document.getElementsByClassName(`img-thumb-${i}`)[0].classList.add('hidden');
+              }}
             />
           </div>
           <div class="w-full md:w-3/4 p-8">

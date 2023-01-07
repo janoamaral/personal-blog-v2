@@ -70,7 +70,6 @@
   on:select={(event) => {
     window.location.href = event.detail.url;
   }}
-  on:keydown={console.log('test')}
 >
   <div
     slot="result"
