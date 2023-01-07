@@ -110,7 +110,7 @@
           href={`/blog/${post.id}/${post.Slug}`}
           class="flex flex-col sm:flex-row mb-10 hover:scale-105 transition"
         >
-          <div class="md:w-1/3 md:rounded-l-lg overflow-hidden h-56">
+          <div class="md:w-1/3 md:rounded-l-lg overflow-hidden min-h-56">
             <img
               class={`h-full w-full object-cover img-thumb-${i} block
               relative blur-lg`}
@@ -118,11 +118,12 @@
               alt={post.Title}
             />
             <img
-              class={`h-full w-full object-cover img-post-${i} block relative`}
+              class={`h-full w-full object-cover img-post-${i} block relative hidden`}
               src={`${API_ENDPOINT}${post.FeatureImage.formats.small.url}`}
               alt={post.Title}
               on:load={(el) => {
                 document.getElementsByClassName(`img-thumb-${i}`)[0].classList.add('hidden');
+                el.currentTarget.classList.remove('hidden');
               }}
             />
           </div>
