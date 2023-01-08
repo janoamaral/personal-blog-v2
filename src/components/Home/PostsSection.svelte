@@ -99,10 +99,11 @@
               >
                 {post.Title}
               </p>
-              <p class="mb-3 text-dim-white font-sm text-ellipsis">
-                {post.Description.length > 170
-                  ? post.Description.substring(0, 170) + '…'
-                  : post.Description}
+              <p
+                class="webkit-box-orientmb-3 text-dim-white font-sm overflow-hidden w-full text-ellipsis max-h-24"
+                style="display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:4"
+              >
+                {post.Description}
               </p>
             </div>
           </a>
