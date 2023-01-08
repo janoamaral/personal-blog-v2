@@ -116,11 +116,15 @@
               relative blur-lg`}
               src={`${API_ENDPOINT}${post.FeatureImage.formats.thumbnail.url}`}
               alt={post.Title}
+              width={`${API_ENDPOINT}${post.FeatureImage.formats.thumbnail.with}`}
+              height={`${API_ENDPOINT}${post.FeatureImage.formats.thumbnail.height}`}
             />
             <img
               class={`h-full w-full object-cover img-post-${i} block relative hidden`}
               src={`${API_ENDPOINT}${post.FeatureImage.formats.small.url}`}
               alt={post.Title}
+              width={`${API_ENDPOINT}${post.FeatureImage.formats.small.with}`}
+              height={`${API_ENDPOINT}${post.FeatureImage.formats.small.height}`}
               on:load={(el) => {
                 document.getElementsByClassName(`img-thumb-${i}`)[0].classList.add('hidden');
                 el.currentTarget.classList.remove('hidden');
