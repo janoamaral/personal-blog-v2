@@ -35,6 +35,8 @@
 	"dependencies": {
 		"@sveltejs/adapter-node": "^1.0.0-next.98",
 		"dexie": "^3.2.2",
+		"markdown-it": "^13.0.1",
+		"markdown-it-attrs": "^4.1.6",
 		"match-sorter": "^6.3.1",
 		"n": "^9.0.1",
 		"stable": "^0.1.8",
