@@ -18,7 +18,7 @@
   fetchFail = !data.get.ok;
 
   // console.log('test', md(post.Content));
-  const md = new MarkdownIt();
+  const md = new MarkdownIt({ html: true });
   md.use(MarkdownItAttrs);
   let html = md.render(post.Content);
 </script>
