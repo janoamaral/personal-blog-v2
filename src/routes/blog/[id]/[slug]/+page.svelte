@@ -1,7 +1,8 @@
 <script>
   export const prerender = true;
 
-  import SvelteMarkdown from 'svelte-markdown';
+  import MarkdownIt from 'markdown-it';
+  import MarkdownItAttrs from 'markdown-it-attrs';
   import fail from '../../../../static/dayum.mp4';
   import Companion from '../../../../components/Companion/Companion.svelte';
 
@@ -15,6 +16,11 @@
 
   let post = data.get.post;
   fetchFail = !data.get.ok;
+
+  // console.log('test', md(post.Content));
+  const md = new MarkdownIt();
+  md.use(MarkdownItAttrs);
+  let html = md.render(post.Content);
 </script>
 
 <svelte:head>
@@ -72,7 +78,7 @@ text-white"
         </div>
       </div>
       <article class="flex flex-col container max-w-4xl m-auto mt-10">
-        <SvelteMarkdown source={post.Content} />
+        {@html html}
       </article>
     </div>
   {/if}
