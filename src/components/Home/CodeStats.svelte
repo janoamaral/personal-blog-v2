@@ -1,21 +1,8 @@
 <script>
-  import { onMount } from 'svelte';
-  import Loader from '../Loader/Loader.svelte';
+  import Spinner from '../Spinner.svelte';
   import Icon from './Icons.svelte';
   import fail from '../../static/dayum.mp4';
 
-  let wakaLanguageStats = {
-    data: [
-      { color: '#f1e05a', name: 'JavaScript', percent: 64.33 },
-      { color: '#ff3e00', name: 'Svelte', percent: 18.68 },
-      { color: '#16ce40', name: 'Bash', percent: 8.9 },
-      { color: '#dc9658', name: 'Docker', percent: 3.19 },
-      { color: '#0c344b', name: 'Prisma', percent: 2.61 },
-      { color: '#d62728', name: 'Text', percent: 1.3 },
-      { color: '#fa1fa1', name: 'Lua', percent: 0.52 },
-      { color: '#9467bd', name: 'Git', percent: 0.47 }
-    ]
-  };
   let isLoading = false;
   let gitFail = false;
 </script>
@@ -35,7 +22,7 @@
   </div>
   {#if isLoading}
     <div class="flex align-middle w-full min-h-screen">
-      <Loader />
+      <Spinner />
     </div>
   {:else if gitFail}
     <p class="text-gray text-sm mb-6 text-center">⚠️ Something went wrong while loading this...</p>

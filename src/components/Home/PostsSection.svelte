@@ -1,12 +1,14 @@
 <script>
   import { onMount } from 'svelte';
   import Loader from '../Loader/Loader.svelte';
+  import Spinner from '../Spinner.svelte';
   import Icon from './Icons.svelte';
   import fail from '../../static/dayum.mp4';
 
   import { db } from '../../stores/db.js';
 
   const API_ENDPOINT = import.meta.env.VITE_BACKEND_URL;
+  console.log(import.meta.env.VITE_BACKEND_URL);
 
   let postList = [];
   let isLoading = false;
@@ -58,7 +60,7 @@
   </div>
   {#if isLoading}
     <div class="flex align-middle w-full min-h-screen">
-      <Loader />
+      <Spinner />
     </div>
   {:else if fetchFail}
     <p class="text-gray text-sm mb-6 text-center">⚠️ Something went wrong while loading this...</p>

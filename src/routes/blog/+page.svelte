@@ -36,7 +36,8 @@
       .then(async (res) => {
         postList = res[0];
         await addPosts(res[0]);
-        totalPages = Math.max(1, Number(res[1]) / postPerPage);
+
+        totalPages = Math.max(1, Math.ceil(Number(res[1]) / postPerPage));
       })
       .catch((err) => {
         console.error(err);
@@ -160,16 +161,29 @@
     </div>
     <ul class="mb-4 text-center">
       {#each Array(totalPages) as _, index (index)}
-        <li
-          class={`inline-block rounded-sm bg-light-black font-mono text-dim-white text-xs
-          w-5 h-6 pt-1
+        {#if currentPage === index}
+          <li
+            class="inline-block rounded-full font-mono font-bold text-black text-xs
+          w-6 h-6 pt-1
           text-center ml-2 cursor-pointer 
-          ${currentPage === index ? 'bg-white text-black' : ''}`}
-        >
-          <a href={`/blog?page=${index + 1}`} on:click={handlePagination(index + 1)}>
-            {index + 1}
-          </a>
-        </li>
+          bg-gradient-to-r from-[#4CFCFF] to-[#4C97FF]"
+          >
+            <a href={`/blog?page=${index + 1}`} on:click={handlePagination(index + 1)}>
+              {index + 1}
+            </a>
+          </li>
+        {:else}
+          <li
+            class={`inline-block rounded-full bg-light-black font-mono text-dim-white text-xs
+          w-6 h-6 pt-1
+          text-center ml-2 cursor-pointer 
+          `}
+          >
+            <a href={`/blog?page=${index + 1}`} on:click={handlePagination(index + 1)}>
+              {index + 1}
+            </a>
+          </li>
+        {/if}
       {/each}
     </ul>
   {/if}
