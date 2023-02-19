@@ -36,7 +36,8 @@
       .then(async (res) => {
         postList = res[0];
         await addPosts(res[0]);
-        totalPages = Math.max(1, Number(res[1]) / postPerPage);
+
+        totalPages = Math.max(1, Math.ceil(Number(res[1]) / postPerPage));
       })
       .catch((err) => {
         console.error(err);

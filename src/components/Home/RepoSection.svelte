@@ -1,8 +1,8 @@
 <script>
   import { onMount } from 'svelte';
-  import Loader from '../Loader/Loader.svelte';
   import Icon from './Icons.svelte';
   import fail from '../../static/dayum.mp4';
+  import Spinner from '../Spinner.svelte';
 
   let gitRepos = [];
   let isLoading = false;
@@ -23,11 +23,12 @@
       })
       .then((res) => {
         const data = res[0];
+        const dataLogico = res[1];
         if (data) {
           gitRepos = data.sort((a, b) => {
             return b.stargazers_count - a.stargazers_count;
           });
-          let formatedLogico = res[1].sort((a, b) => {
+          let formatedLogico = dataLogico.sort((a, b) => {
             return b.stargazers_count - a.stargazers_count;
           });
           gitRepos = gitRepos.slice(0, 3);
@@ -59,7 +60,7 @@
     </h3>
     <p class="text-gray text-sm mb-12">
       This are some of my most popular open source projects on GitHub.
-      <br />You can also see 
+      <br />You can also see
       <a
         href="https://github.com/janoamaral/personal-blog-v2"
         aria-label="this site code"
@@ -70,7 +71,7 @@
   </div>
   {#if isLoading}
     <div class="flex align-middle w-full min-h-screen">
-      <Loader />
+      <Spinner />
     </div>
   {:else if gitFail}
     <p class="text-gray text-sm mb-6 text-center">⚠️ Something went wrong while loading this...</p>
