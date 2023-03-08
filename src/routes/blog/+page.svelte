@@ -20,6 +20,7 @@
 
   const LoadPosts = async () => {
     isLoading = true;
+    console.log('HIT', currentPage * postPerPage);
     Promise.allSettled([
       fetch(
         `${API_ENDPOINT}/posts?_start=${
