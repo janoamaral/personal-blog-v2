@@ -6,10 +6,8 @@
 
   import { matchSorter } from 'match-sorter';
 
-  import { db } from '../stores/db';
   import { isSpotlightOpen } from '../stores/common';
 
-  import { browser } from '$app/environment';
   const API_ENDPOINT = import.meta.env.VITE_BACKEND_URL;
 
   let query = '';

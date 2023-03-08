@@ -1,5 +1,4 @@
 <script>
-  export const prerender = true;
 
   import MarkdownIt from 'markdown-it';
   import MarkdownItAttrs from 'markdown-it-attrs';
