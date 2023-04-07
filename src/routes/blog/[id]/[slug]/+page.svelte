@@ -1,9 +1,9 @@
 <script>
-
   import MarkdownIt from 'markdown-it';
   import MarkdownItAttrs from 'markdown-it-attrs';
   import fail from '../../../../static/dayum.mp4';
   import Companion from '../../../../components/Companion/Companion.svelte';
+  import Sharer from '../../../../components/Sharer.svelte';
 
   import SkeletonArticle from '../../../../components/Skeleton/Skeleton-Article.svelte';
 
@@ -47,7 +47,8 @@
   class="flex flex-col container min-h-screen max-w-6xl m-auto pt-16 pb-16 lg:pt-16
 text-white"
 >
-  <Companion />
+  <Companion showSharer={true} />
+  <Sharer title={post.Description} url={`https://jano.amaral.ar/blog/${post.id}/${post.Slug}`} />
   {#if isLoading}
     <SkeletonArticle />
   {:else if fetchFail}

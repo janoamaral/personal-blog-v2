@@ -1,6 +1,7 @@
 <script>
+  export let showSharer = false;
   import Icon from '../Home/Icons.svelte';
-  import { isCollapsed, isSpotlightOpen } from '../../stores/common.js';
+  import { isCollapsed, isSpotlightOpen, isSharerOpen } from '../../stores/common.js';
 
   function toggleCollapse() {
     $isCollapsed = !$isCollapsed;
@@ -9,6 +10,11 @@
   function openSpotlight() {
     $isSpotlightOpen = false;
     $isSpotlightOpen = true;
+  }
+
+  function openSharer() {
+    $isSharerOpen = false;
+    $isSharerOpen = true;
   }
 </script>
 
@@ -76,14 +82,14 @@
         <Icon size={6} type="search" gradientFrom="0, 255, 72, 0" gradientTo="0, 255, 72, 0" />
       </button>
     </li>
-    <li class={`${$isCollapsed ? 'hidden' : 'hidden'}`}>
-      <div
+    <li class={`${!showSharer || $isCollapsed ? 'hidden' : 'block'}`} on:click={openSharer}>
+      <button
         aria-label="Compartir"
-        class="inline-block rounded-xl hover:text-accent-green
-      hover:bg-accent-green/20 pb-0 cursor-pointer"
+        class="inline-block rounded-xl hover:text-accent-orange
+      hover:bg-accent-orange/20 pb-0 cursor-pointer"
       >
-        <Icon size={6} type="share" gradientFrom="0, 255, 72, 0" gradientTo="0, 255, 72, 0" />
-      </div>
+        <Icon size={6} type="share" gradientFrom="128, 72, 255, 0" gradientTo="0, 72, 255, 0" />
+      </button>
     </li>
   </ul>
 </toolbar>
