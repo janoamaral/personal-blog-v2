@@ -80,7 +80,7 @@
 </svelte:head>
 
 <div class="flex flex-col container min-h-screen max-w-5xl m-auto pt-16 pb-16 lg:pt-16">
-  <Companion />
+  <Companion showSharer={false} />
 
   <header>
     <div class="text-center mb-20 px-4 text-black">

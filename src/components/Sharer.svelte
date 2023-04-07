@@ -1,5 +1,6 @@
 <script>
   import { isSharerOpen } from '../stores/common';
+  import Icon from '../components/Home/Icons.svelte';
 
   export let url;
   export let title;
@@ -13,7 +14,6 @@
 
     try {
       await navigator.clipboard.writeText(url);
-      console.log('Link copied to clipboard');
     } catch (err) {
       console.error('Failed to copy link: ', err);
     }
@@ -33,7 +33,7 @@
 
   const shareOnLinkedIn = () => {
     window.open(
-      `https://www.linkedin.com/shareArticle?mini=true&url=${url}&title=${title}`,
+      `https://www.linkedin.com/shareArticle?mini=true&url=${url}&title=${text}`,
       '_blank'
     );
   };
@@ -50,9 +50,8 @@
 </script>
 
 <div class={`flex items-center justify-center ${$isSharerOpen ? 'block' : 'hidden'}`}>
-  <div class="fixed inset-0 bg-black opacity-50 z-50" on:click={closeSharer} />
-  <div class="fixed inset-0 z-50 flex items-center justify-center">
-    <div class="relative bg-light-black p-6 rounded-lg max-w-md">
+  <div class="fixed inset-0 z-50 flex items-center justify-center z-60">
+    <div class="relative bg-light-black p-6 rounded-lg max-w-md z-10">
       <button
         class="absolute top-0 right-0 m-4 text-white bg-black/50 hover:bg-black/90 rounded-full p-2"
         on:click={closeSharer}
@@ -90,36 +89,37 @@
       </div>
       <div class="flex justify-between">
         <button
-          class="w-1/6 bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 rounded mr-2"
+          class="w-1/6 h-16 pt-1 bg-green hover:bg-green-600 text-white font-bold rounded-full"
           on:click={shareOnWhatsApp}
         >
-          WhatsApp
+          <Icon type="whatsapp" gradientFrom="0,0,0,0" gradientTo="0,0,0,0" />
         </button>
         <button
-          class="w-1/6 bg-blue-400 hover:bg-blue-500 text-white font-bold py-2 px-4 rounded mx-2"
+          class="w-1/6 h-16 pt-1 bg-blue-500 hover:bg-green-600 text-white font-bold rounded-full"
           on:click={shareOnTwitter}
         >
-          Twitter
+          <Icon type="twitter" gradientFrom="0,0,0,0" gradientTo="0,0,0,0" />
         </button>
         <button
-          class="w-1/6 bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded mx-2"
+          class="w-1/6 h-16 pt-1 pl-1 pr-8 bg-blue-800 hover:bg-green-600 text-white font-bold rounded-full"
           on:click={shareOnFacebook}
         >
-          Facebook
+          <Icon type="facebook" gradientFrom="0,0,0,0" gradientTo="0,0,0,0" />
         </button>
         <button
-          class="w-1/6 bg-blue-700 hover:bg-blue-800 text-white font-bold py-2 px-4 rounded mx-2"
+          class="w-1/6 h-16 pt-1 pl-1 pr-9 bg-blue-700 hover:bg-green-600 text-white font-bold rounded-full"
           on:click={shareOnLinkedIn}
         >
-          LinkedIn
+          <Icon type="linkedin" gradientFrom="0,0,0,0" gradientTo="0,0,0,0" />
         </button>
         <button
-          class="w-1/6 bg-pink-500 hover:bg-pink-600 text-white font-bold py-2 px-4 rounded mx-2"
+          class="w-1/6 h-16 pt-1 pl-1 pr-9 bg-accent-violet hover:bg-green-600 text-white font-bold rounded-full"
           on:click={shareByEmail}
         >
-          Mail
+          <Icon type="mail" gradientFrom="0,0,0,0" gradientTo="0,0,0,0" />
         </button>
       </div>
     </div>
+    <div on:click={closeSharer} class="fixed inset-0 bg-black opacity-50" />
   </div>
 </div>

@@ -1,5 +1,4 @@
 <script>
-  import { isSharerOpen } from '../../../../stores/common';
   import MarkdownIt from 'markdown-it';
   import MarkdownItAttrs from 'markdown-it-attrs';
   import fail from '../../../../static/dayum.mp4';
@@ -48,11 +47,8 @@
   class="flex flex-col container min-h-screen max-w-6xl m-auto pt-16 pb-16 lg:pt-16
 text-white"
 >
-  <Companion />
-  <Sharer
-    title={post.Description}
-    url={`https://jano.amaral.ar/blog/${post.id}/${post.Slug}`}
-  />
+  <Companion showSharer={true} />
+  <Sharer title={post.Description} url={`https://jano.amaral.ar/blog/${post.id}/${post.Slug}`} />
   {#if isLoading}
     <SkeletonArticle />
   {:else if fetchFail}
