@@ -51,7 +51,7 @@
 
 <div class={`flex items-center justify-center ${$isSharerOpen ? 'block' : 'hidden'}`}>
   <div class="fixed inset-0 z-50 flex items-center justify-center z-60">
-    <div class="relative bg-light-black p-6 rounded-lg max-w-md z-10 shadow-2xl">
+    <div class="relative bg-light-black p-6 rounded-lg max-w-md z-10 shadow-2xl w-11/12">
       <button
         class="absolute top-0 right-0 m-4 text-white bg-black/40 hover:bg-black/90 rounded-full p-2"
         on:click={closeSharer}
@@ -87,7 +87,7 @@
           Copiar
         </button>
       </div>
-      <div class="flex justify-between">
+      <div class="flex justify-between text-sm">
         <button
           class="w-1/6 h-16 pt-1 bg-green hover:bg-green-600 text-white font-bold rounded-full"
           on:click={shareOnWhatsApp}
@@ -101,19 +101,19 @@
           <Icon type="twitter" gradientFrom="0,0,0,0" gradientTo="0,0,0,0" />
         </button>
         <button
-          class="w-1/6 h-16 pt-1 pl-1 pr-8 bg-blue-800  text-white font-bold rounded-full"
+          class="w-1/6 h-16 pt-1 bg-blue-800  text-white font-bold rounded-full"
           on:click={shareOnFacebook}
         >
           <Icon type="facebook" gradientFrom="0,0,0,0" gradientTo="0,0,0,0" />
         </button>
         <button
-          class="w-1/6 h-16 pt-1 pl-1 pr-9 bg-blue-700  text-white font-bold rounded-full"
+          class="w-1/6 h-16 pt-1 bg-blue-700  text-white font-bold rounded-full"
           on:click={shareOnLinkedIn}
         >
           <Icon type="linkedin" gradientFrom="0,0,0,0" gradientTo="0,0,0,0" />
         </button>
         <button
-          class="w-1/6 h-16 pt-1 pl-1 pr-9 bg-accent-violet  text-white font-bold rounded-full"
+          class="w-1/6 h-13 pt-1 bg-accent-violet  text-white font-bold rounded-full"
           on:click={shareByEmail}
         >
           <Icon type="mail" gradientFrom="0,0,0,0" gradientTo="0,0,0,0" />

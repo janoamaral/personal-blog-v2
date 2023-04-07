@@ -185,8 +185,8 @@
   {#if type === 'whatsapp'}
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      width="32"
-      height="32"
+      width="28"
+      height="28"
       viewBox="0 0 24 24"
       stroke-width="1.5"
       stroke="currentColor"
@@ -205,8 +205,8 @@
   {#if type === 'twitter'}
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      width="32"
-      height="32"
+      width="28"
+      height="28"
       viewBox="0 0 24 24"
       stroke-width="1.5"
       stroke="currentColor"
@@ -224,8 +224,8 @@
   {#if type === 'facebook'}
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      width="32"
-      height="32"
+      width="28"
+      height="28"
       viewBox="0 0 24 24"
       stroke-width="1.5"
       stroke="currentColor"
@@ -242,8 +242,8 @@
     <svg
       xmlns="http://www.w3.org/2000/svg"
       class="icon icon-tabler icon-tabler-brand-linkedin"
-      width="32"
-      height="32"
+      width="28"
+      height="28"
       viewBox="0 0 24 24"
       stroke-width="1.5"
       stroke="currentColor"
@@ -264,8 +264,8 @@
     <svg
       xmlns="http://www.w3.org/2000/svg"
       class="icon icon-tabler icon-tabler-mail"
-      width="32"
-      height="32"
+      width="28"
+      height="28"
       viewBox="0 0 24 24"
       stroke-width="1.5"
       stroke="currentColor"
