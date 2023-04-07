@@ -1,4 +1,5 @@
 <script>
+  import { isSharerOpen } from '../../../../stores/common';
   import MarkdownIt from 'markdown-it';
   import MarkdownItAttrs from 'markdown-it-attrs';
   import fail from '../../../../static/dayum.mp4';
