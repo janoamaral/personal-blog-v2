@@ -3,6 +3,8 @@
   const dispatch = createEventDispatcher();
 
   export let url;
+  export let title;
+  const text = encodeURIComponent(`${title} ${url}`);
 
   const copyToClipboard = async () => {
     if (!navigator?.clipboard) {
@@ -19,25 +21,18 @@
   };
 
   const shareOnWhatsApp = () => {
-    const text = encodeURIComponent(url);
     window.open(`https://wa.me/?text=${text}`, '_blank');
   };
 
   const shareOnTwitter = () => {
-    const text = encodeURIComponent(`Check out this link: ${url}`);
     window.open(`https://twitter.com/intent/tweet?text=${text}`, '_blank');
   };
 
   const shareOnFacebook = () => {
-    const text = encodeURIComponent(`Check out this link: ${url}`);
-    window.open(
-      `https://www.facebook.com/sharer/sharer.php?u=${url}&quote=${text}`,
-      '_blank'
-    );
+    window.open(`https://www.facebook.com/sharer/sharer.php?u=${url}&quote=${text}`, '_blank');
   };
 
   const shareOnLinkedIn = () => {
-    const title = encodeURIComponent(document.title);
     window.open(
       `https://www.linkedin.com/shareArticle?mini=true&url=${url}&title=${title}`,
       '_blank'
@@ -45,14 +40,14 @@
   };
 
   const shareByEmail = () => {
-    const subject = encodeURIComponent('Check out this link');
-    const body = encodeURIComponent(`Hey, check out this link: ${url}`);
+    const subject = encodeURIComponent(title);
+    const body = text;
     window.open(`mailto:?subject=${subject}&body=${body}`);
   };
 </script>
 
 <div class="flex items-center justify-center">
-  <div class="absolute inset-0 bg-black opacity-50 z-50"></div>
+  <div class="absolute inset-0 bg-black opacity-50 z-50" />
   <div class="absolute inset-0 z-50 flex items-center justify-center">
     <div class="bg-light-black p-6 rounded-lg max-w-md">
       <h2 class="text-2xl font-bold mb-2">Compartir</h2>

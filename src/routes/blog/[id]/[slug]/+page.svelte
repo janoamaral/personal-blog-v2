@@ -48,7 +48,10 @@
 text-white"
 >
   <Companion />
-  <Sharer url={`https://jano.amaral.ar/blog/${post.id}/${post.Slug}`} />
+  <Sharer
+    title={post.Description}
+    url={`https://jano.amaral.ar/blog/${post.id}/${post.Slug}`}
+  />
   {#if isLoading}
     <SkeletonArticle />
   {:else if fetchFail}
