@@ -76,7 +76,7 @@
         <Icon size={6} type="search" gradientFrom="0, 255, 72, 0" gradientTo="0, 255, 72, 0" />
       </button>
     </li>
-    <li class={`${$isCollapsed ? 'hidden' : 'hidden'}`}>
+    <li class={`${$isCollapsed ? 'hidden' : 'block'}`}>
       <div
         aria-label="Compartir"
         class="inline-block rounded-xl hover:text-accent-green
