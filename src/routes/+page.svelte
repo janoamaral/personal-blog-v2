@@ -3,6 +3,24 @@
   import Repos from '../components/Home/RepoSection.svelte';
   import CodeStats from '../components/Home/CodeStats.svelte';
   import Posts from '../components/Home/PostsSection.svelte';
+  import CommandPalette, { defineActions, createStoreMethods } from 'svelte-command-palette';
+  const paletteMethods = createStoreMethods();
+  const actions = defineActions([
+    {
+      title: ' Home',
+      subTitle: 'Ir al home',
+      onRun: ({ action, storeProps, storeMethods }) => {
+        window.location.href = '/';
+      }
+    },
+    {
+      title: 'Blog',
+      subTitle: 'Ir a la página principal del blog',
+      onRun: ({ action, storeProps, storeMethods }) => {
+        window.location.href = '/blog?page=1';
+      }
+    },
+  ]);
 
   import { isSpotlightOpen } from '../stores/common';
 
@@ -11,6 +29,7 @@
   function openSpotlight() {
     $isSpotlightOpen = false;
     $isSpotlightOpen = true;
+    paletteMethods.openPalette();
   }
 
   const createObserver = (elemento) => {
@@ -292,4 +311,10 @@
     <CodeStats />
     <Posts />
   </main>
+  <CommandPalette
+    commands={actions}
+    paletteWrapperInnerClass="paleteContainer text-white rounded-lg"
+    inputClass="bg-light-black text-white text-2xl font-light"
+    overlayClass="w-full h-full bg-black absolute top-0 left-0 z-50"
+  />
 </div>

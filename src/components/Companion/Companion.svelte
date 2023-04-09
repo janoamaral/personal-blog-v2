@@ -1,15 +1,53 @@
 <script>
   export let showSharer = false;
   import Icon from '../Home/Icons.svelte';
-  import { isCollapsed, isSpotlightOpen, isSharerOpen } from '../../stores/common.js';
+  import { isCollapsed, isSharerOpen } from '../../stores/common.js';
+  import CommandPalette, { defineActions, createStoreMethods } from 'svelte-command-palette';
+  const paletteMethods = createStoreMethods();
+
+  let defaultActions = [
+    {
+      title: 'Home',
+      subTitle: 'Go to the home page',
+      onRun: ({ action, storeProps, storeMethods }) => {
+        window.location.href = '/';
+      },
+      shortcut: 'g h'
+    },
+    {
+      title: 'My GitHub',
+      subTitle: 'Go to my Github profile in a new tab',
+      onRun: ({ action, storeProps, storeMethods }) => {
+        window.open('https://github.com/janoamaral');
+      },
+      shortcut: 'g g'
+    },
+    {
+      title: 'My LinkedIn',
+      subTitle: 'Go to my LinkedIn profile in a new tab',
+      onRun: ({ action, storeProps, storeMethods }) => {
+        window.open('https://www.linkedin.com/in/janoamaral');
+      },
+      shortcut: 'g l'
+    },
+    {
+      title: 'Blog',
+      subTitle: 'Go to the blog',
+      onRun: ({ action, storeProps, storeMethods }) => {
+        window.location.href = '/blog?page=1';
+      },
+      shortcut: 'g b'
+    }
+  ];
+
+  const actions = defineActions(defaultActions);
 
   function toggleCollapse() {
     $isCollapsed = !$isCollapsed;
   }
 
   function openSpotlight() {
-    $isSpotlightOpen = false;
-    $isSpotlightOpen = true;
+    paletteMethods.openPalette();
   }
 
   function openSharer() {
@@ -93,3 +131,9 @@
     </li>
   </ul>
 </toolbar>
+
+<CommandPalette
+  commands={actions}
+  paletteWrapperInnerClass="paleteContainer text-white rounded-lg overflow-hidden"
+  inputClass="bg-light-black text-white text-2xl font-light"
+/>
