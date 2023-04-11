@@ -2,7 +2,6 @@
   import Icon from '../../components/Home/Icons.svelte';
   import fail from '../../static/dayum.mp4';
   import { page } from '$app/stores';
-  import Companion from '../../components/Companion/Companion.svelte';
   import { db } from '../../stores/db.js';
 
   import SkeletonPostCard from '../../components/Skeleton/Skeleton-Post-Card.svelte';
@@ -80,7 +79,6 @@
 </svelte:head>
 
 <div class="flex flex-col container min-h-screen max-w-5xl m-auto pt-16 pb-16 lg:pt-16">
-  <Companion showSharer={false} />
 
   <header>
     <div class="text-center mb-20 px-4 text-black">

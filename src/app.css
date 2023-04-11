@@ -213,3 +213,43 @@ article h1,article h2,article h3,article h4,article h5,article h6{
     left: 0em;
   }
 }
+
+.paleteContainer {
+  box-shadow: none !important;
+}
+
+.paleteContainer form input {
+  color: white !important;
+}
+
+.paleteContainer ul {
+  overflow: hidden !important;
+  background: #24283b !important;
+  border: none;
+}
+
+.paleteContainer ul li {
+  border: none !important;
+  color: white;
+  cursor: pointer;
+}
+
+.paleteContainer ul li h4{
+  color: white;
+  font-weight: 600 !important;
+}
+
+.paleteContainer ul li .subtitle{
+  color: #9699a3;
+  font-weight: 600 !important;
+}
+
+.paleteContainer .selected {
+  background: #283254 !important;
+  color: white !important;
+  border: none !important;
+}
+
+#wrapper {
+  background: rgba(0,0,0,0.7);
+}

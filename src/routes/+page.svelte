@@ -3,6 +3,8 @@
   import Repos from '../components/Home/RepoSection.svelte';
   import CodeStats from '../components/Home/CodeStats.svelte';
   import Posts from '../components/Home/PostsSection.svelte';
+  import { createStoreMethods } from 'svelte-command-palette';
+  const paletteMethods = createStoreMethods();
 
   import { isSpotlightOpen } from '../stores/common';
 
@@ -11,6 +13,7 @@
   function openSpotlight() {
     $isSpotlightOpen = false;
     $isSpotlightOpen = true;
+    paletteMethods.openPalette();
   }
 
   const createObserver = (elemento) => {
