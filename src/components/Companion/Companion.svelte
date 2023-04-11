@@ -1,15 +1,16 @@
 <script>
   export let showSharer = false;
   import Icon from '../Home/Icons.svelte';
-  import { isCollapsed, isSpotlightOpen, isSharerOpen } from '../../stores/common.js';
+  import { isCollapsed, isSharerOpen } from '../../stores/common.js';
+  import { createStoreMethods } from 'svelte-command-palette';
+  const paletteMethods = createStoreMethods();
 
   function toggleCollapse() {
     $isCollapsed = !$isCollapsed;
   }
 
   function openSpotlight() {
-    $isSpotlightOpen = false;
-    $isSpotlightOpen = true;
+    paletteMethods.openPalette();
   }
 
   function openSharer() {
