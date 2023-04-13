@@ -13,13 +13,13 @@
   /** @type {import('./$types').PageData} */
   export let data;
 
-  let post = data.get.post;
+  $: post = data.get.post;
   fetchFail = !data.get.ok;
 
   // console.log('test', md(post.Content));
   const md = new MarkdownIt({ html: true });
   md.use(MarkdownItAttrs);
-  let html = md.render(post.Content);
+  $: html = md.render(post.Content);
 </script>
 
 <svelte:head>

@@ -1,5 +1,6 @@
 <script>
   import '../app.css';
+  import { goto } from '$app/navigation';
   import { db } from '../stores/db';
   import { storeActions } from '../stores/common';
   import Companion from '../components/Companion/Companion.svelte';
@@ -12,9 +13,7 @@
   let isLoading = true;
 
   const LoadPosts = async () => {
-    Promise.allSettled([
-      fetch(`${API_ENDPOINT}/posts?_sort=PublishDate:DESC`),
-    ])
+    Promise.allSettled([fetch(`${API_ENDPOINT}/posts?_sort=PublishDate:DESC`)])
       .then(async ([rawPosts, rawPostCount]) => {
         const resPosts = rawPosts.value;
         return [await resPosts.json()];
@@ -26,7 +25,7 @@
               title: post.Title,
               subTitle: post.Description,
               onRun: () => {
-                window.location.href = `/blog/${post.id}/${post.Slug}`;
+                goto(`/blog/${post.id}/${post.Slug}`);
               }
             };
           })
