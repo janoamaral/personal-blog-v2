@@ -1,4 +1,5 @@
 import { writable } from 'svelte/store';
+import { goto } from '$app/navigation';
 
 export const isCollapsed = writable(false);
 
@@ -10,7 +11,7 @@ export const storeActions = writable([
     title: 'Home',
     subTitle: 'Go to the home page',
     onRun: ({ action, storeProps, storeMethods }) => {
-      window.location.href = '/';
+      goto('/');
     },
     shortcut: 'g h'
   },
@@ -34,7 +35,7 @@ export const storeActions = writable([
     title: 'Blog',
     subTitle: 'Go to the blog',
     onRun: ({ action, storeProps, storeMethods }) => {
-      window.location.href = '/blog?page=1';
+      goto('/blog?page=1');
     },
     shortcut: 'g b'
   }
