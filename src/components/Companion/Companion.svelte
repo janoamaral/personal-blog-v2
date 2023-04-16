@@ -74,11 +74,12 @@
         <Icon size={6} type="home" gradientFrom="173, 182, 255, 0" gradientTo="174, 109, 255, 0" />
       </a>
       <div
-        class="text-xs font-bold uppercase inline-block absolute w-auto h-auto bg-light-black p-2 top-0 left-0
-        bg-black/70 backdrop-blur-sm border border-light-black rounded-lg text-white
+        class="text-xs font-bold uppercase inline-block absolute w-auto h-auto
+        p-2 top-0 left-0 text-white
+        bg-black/70 backdrop-blur-sm border border-light-black rounded-lg
         -translate-x-2 translate-y-2
          transition-all duration-200 ease-in-out opacity-0 none
-        group-hover:-translate-x-16 group-hover:opacity-100 group-hover:block"
+        group-hover:-translate-x-16 group-hover:opacity-100 group-hover:block z-0"
       >
         Home
       </div>
@@ -93,11 +94,12 @@
         <Icon size={6} type="edit" gradientFrom="173, 182, 255, 0" gradientTo="174, 109, 255, 0" />
       </a>
       <div
-        class="text-xs font-bold uppercase inline-block absolute w-auto h-auto bg-light-black p-2 top-0 left-0
-        bg-black/70 backdrop-blur-sm border border-light-black rounded-lg text-white
+        class="text-xs font-bold uppercase inline-block absolute w-auto h-auto
+        p-2 top-0 left-0 text-white
+        bg-black/70 backdrop-blur-lg border border-light-black rounded-lg
         -translate-x-2 translate-y-2
          transition-all duration-200 ease-in-out opacity-0 none
-        group-hover:-translate-x-16 group-hover:opacity-100 group-hover:block"
+        group-hover:-translate-x-16 group-hover:opacity-100 group-hover:block z-0"
       >
         Blog
       </div>
@@ -111,8 +113,9 @@
         <Icon size={6} type="search" gradientFrom="0, 255, 72, 0" gradientTo="0, 255, 72, 0" />
       </button>
       <div
-        class="text-xs font-bold uppercase inline-block absolute w-auto h-auto bg-light-black p-2 top-0 left-0
-        bg-black/70 backdrop-blur-sm border border-light-black rounded-lg text-white
+        class="text-xs font-bold uppercase inline-block absolute w-auto h-auto
+        p-2 top-0 left-0 text-white
+        bg-black/70 backdrop-blur-lg border border-light-black rounded-lg
         -translate-x-2 translate-y-2
          transition-all duration-200 ease-in-out opacity-0 none
         group-hover:-translate-x-20 group-hover:opacity-100 group-hover:block z-0"
@@ -130,8 +133,8 @@
       </button>
       <div
         class="text-xs font-bold uppercase inline-block absolute w-auto h-auto
-        bg-light-black p-2 top-0 -left-1
-        bg-black/70 backdrop-blur-sm border border-light-black rounded-lg text-white
+        p-2 top-0 -left-1 text-white
+        bg-black/70 backdrop-blur-lg border border-light-black rounded-lg
         -translate-x-2 translate-y-2
          transition-all duration-200 ease-in-out opacity-0 none
         group-hover:-translate-x-16 group-hover:opacity-100 group-hover:block z-0"
