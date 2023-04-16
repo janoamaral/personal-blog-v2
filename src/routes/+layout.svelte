@@ -45,7 +45,7 @@
   });
 </script>
 
-<div class="text-white font-sans bg-black">
+<div class="text-white font-sans bg-black test">
   {#if !isLoading}
     <CommandPalette
       commands={defineActions($storeActions)}
