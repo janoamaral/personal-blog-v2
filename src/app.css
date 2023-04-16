@@ -253,3 +253,43 @@ article h1,article h2,article h3,article h4,article h5,article h6{
 #wrapper {
   background: rgba(0,0,0,0.7);
 }
+
+
+
+/** style the scrollbar like ubuntu unity **/
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #222;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #444;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+::-webkit-scrollbar-thumb:active {
+  background: #666;
+}
+
+::-webkit-scrollbar-thumb:window-inactive {
+  background: #444;
+}
+
+::-webkit-scrollbar-corner {
+  background: #222;
+}
+
+::-webkit-resizer {
+  background: #444;
+}
+
+/** end style the scrollbar like ubuntu unity **/

@@ -120,7 +120,7 @@
   <meta property="twitter:image" content="https://jano.amaral.ar/social.png" />
 </svelte:head>
 
-<div class="flex flex-col md:flex-row container m-auto lg:pt-16">
+<div class="flex flex-col md:flex-row container m-auto lg:pt-16 scroll-smooth">
   <header
     class="p-4 md:w-1/3 md:fixed relative h-screen md:h-full flex place-items-center
   justify-center md:block"
@@ -288,11 +288,11 @@
       </li>
     </ul>
   </header>
-  <div class="p-4 md:w-1/2" />
+  <div class="p-4 md:w-1/2 scroll-smooth" />
   <main id="scrollArea" class="p-4 flex flex-col md:w-1/2 min-h-screen scroll-smooth">
     <AboutMe />
     <Repos />
     <CodeStats />
     <Posts />
-  </main>
 </div>
+
