@@ -288,7 +288,7 @@
       </li>
     </ul>
   </header>
-  <div class="p-4 md:w-1/2 scroll-smooth" />
+  <div class="p-4 md:w-1/2 scroll-smooth hidden md:block" />
   <main id="scrollArea" class="p-4 flex flex-col md:w-1/2 min-h-screen scroll-smooth">
     <AboutMe />
     <Repos />
