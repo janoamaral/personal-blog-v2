@@ -55,12 +55,13 @@
         </button>
       {/if}
       <div
-        class="text-xs font-bold uppercase inline-block absolute w-auto h-auto
+        class="text-xs font-bold uppercase absolute w-auto h-auto
         p-2 top-0 left-0 text-white
         bg-black/70 backdrop-blur-sm border border-light-black rounded-lg
         -translate-x-2 translate-y-2
          transition-all duration-200 ease-in-out opacity-0 none
-        group-hover:-translate-x-14 group-hover:opacity-100 group-hover:block z-0"
+        group-hover:-translate-x-14 group-hover:opacity-100 z-0
+        hidden md:block"
       >
         {$isCollapsed ? 'show' : 'hide'}
       </div>
@@ -74,12 +75,13 @@
         <Icon size={6} type="home" gradientFrom="173, 182, 255, 0" gradientTo="174, 109, 255, 0" />
       </a>
       <div
-        class="text-xs font-bold uppercase inline-block absolute w-auto h-auto
+        class="text-xs font-bold uppercase absolute w-auto h-auto
         p-2 top-0 left-0 text-white
         bg-black/70 backdrop-blur-sm border border-light-black rounded-lg
         -translate-x-2 translate-y-2
          transition-all duration-200 ease-in-out opacity-0 none
-        group-hover:-translate-x-16 group-hover:opacity-100 group-hover:block z-0"
+        group-hover:-translate-x-16 group-hover:opacity-100 z-0
+        hidden md:block"
       >
         Home
       </div>
@@ -94,12 +96,13 @@
         <Icon size={6} type="edit" gradientFrom="173, 182, 255, 0" gradientTo="174, 109, 255, 0" />
       </a>
       <div
-        class="text-xs font-bold uppercase inline-block absolute w-auto h-auto
+        class="text-xs font-bold uppercase absolute w-auto h-auto
         p-2 top-0 left-0 text-white
         bg-black/70 backdrop-blur-lg border border-light-black rounded-lg
         -translate-x-2 translate-y-2
-         transition-all duration-200 ease-in-out opacity-0 none
-        group-hover:-translate-x-16 group-hover:opacity-100 group-hover:block z-0"
+         transition-all duration-200 ease-in-out opacity-0
+        group-hover:-translate-x-16 group-hover:opacity-100 z-0
+        hidden md:block"
       >
         Blog
       </div>
@@ -113,12 +116,13 @@
         <Icon size={6} type="search" gradientFrom="0, 255, 72, 0" gradientTo="0, 255, 72, 0" />
       </button>
       <div
-        class="text-xs font-bold uppercase inline-block absolute w-auto h-auto
+        class="text-xs font-bold uppercase absolute w-auto h-auto
         p-2 top-0 left-0 text-white
         bg-black/70 backdrop-blur-lg border border-light-black rounded-lg
         -translate-x-2 translate-y-2
-         transition-all duration-200 ease-in-out opacity-0 none
-        group-hover:-translate-x-20 group-hover:opacity-100 group-hover:block z-0"
+        transition-all duration-200 ease-in-out opacity-0
+        group-hover:-translate-x-20 group-hover:opacity-100 z-0
+        hidden md:block"
       >
         search
       </div>
@@ -132,12 +136,13 @@
         <Icon size={6} type="share" gradientFrom="128, 72, 255, 0" gradientTo="0, 72, 255, 0" />
       </button>
       <div
-        class="text-xs font-bold uppercase inline-block absolute w-auto h-auto
+        class="text-xs font-bold uppercase absolute w-auto h-auto
         p-2 top-0 -left-1 text-white
         bg-black/70 backdrop-blur-lg border border-light-black rounded-lg
         -translate-x-2 translate-y-2
          transition-all duration-200 ease-in-out opacity-0 none
-        group-hover:-translate-x-16 group-hover:opacity-100 group-hover:block z-0"
+        group-hover:-translate-x-16 group-hover:opacity-100 z-0
+        hidden md:block"
       >
         share
       </div>
