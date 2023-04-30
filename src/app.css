@@ -79,6 +79,13 @@ iframe {
   min-height: 1000px;
 }
 
+article iframe {
+  width: 100%;
+  aspect-ratio: 16/9;
+  display: block;
+  overflow-y: hidden;
+}
+
 
 article p {
   margin-bottom: 2em;
